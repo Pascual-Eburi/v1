@@ -3,6 +3,8 @@ import corpcommentImg from "@/public/img/projects/corpcomment.png";
 import rmtdevImg from "@/public/img/projects/rmtdev.png";
 import wordanalyticsImg from "@/public/img/projects/wordanalytics.png";
 
+
+// projects data
 export const projectsData = [
     {
       title: "CorpComment",
