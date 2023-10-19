@@ -9,8 +9,12 @@ import Image from "next/image";
 import python from "@/lib/icons/python.png";
 
 import { motion } from "framer-motion";
+import useSectionInView from "@/lib/hooks/useSectionInView";
 
 export default function Skills() {
+    // check when component is in view to set active class to his link
+    const {ref} = useSectionInView({section: "Skills", threshold: 0.75});
+
   const skills_keys = Object.keys(skills) as SkillTabName[];
   const initial_tab_active: SkillTabName = "Front-End";
   const [activeTab, setActiveTab] = useState<SkillTabName>(initial_tab_active);
@@ -21,13 +25,12 @@ export default function Skills() {
   useEffect(() => {
     if (activeTab) {
       const data = skills[activeTab];
-      console.log(data);
       setCurrentContent(data);
     }
   }, [activeTab, currentContent]);
 
   return (
-    <motion.section className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40 " id="skills"
+    <motion.section ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40 " id="skills"
     initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               
@@ -64,7 +67,7 @@ export default function Skills() {
           {skills_keys.map((name, index) => (
             <motion.div
               key={name + index}
-              className={clsx("py-4 px-1 bg-gray-100 transition", {
+              className={clsx("py-4 px-1 transition", {
                 hidden: activeTab != name,
               })}
                 
