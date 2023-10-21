@@ -30,13 +30,13 @@ export default function Skills() {
   }, [activeTab, currentContent]);
 
   return (
-    <motion.section ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40 " id="skills"
+    <motion.section ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-30 " id="skills"
     initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               
               >
       <SectionHeading> Tools and technologies </SectionHeading>
-      <div className="md:mb-10 md:mt-10 p-10 md:flex md:gap-3">
+      <div className="p-10 md:flex md:gap-3">
         <ul className="text-left flex md:flex-col gap-5 md:gap-0 md:basis-1/4 text-gray-400 relative font-mono font-medium capitalize">
           {skills_keys &&
             skills_keys.map((name, index) => (
