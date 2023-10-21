@@ -43,3 +43,19 @@ export type useSectionInViewProps = {
     section: SectionName,
     threshold: number
 }
+
+
+// type for contact form validation response
+export type validateContactFormDataResponse = {
+    error: string | boolean
+}
+
+// PendingProvider types ActiveSectionContextProviderProps
+export type PendingProviderProps = {
+    children : React.ReactNode
+}
+
+export type PendingContextType = {
+    pending: boolean,
+    setPending: React.Dispatch<React.SetStateAction<boolean>>
+}
