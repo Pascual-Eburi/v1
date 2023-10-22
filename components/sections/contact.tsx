@@ -4,36 +4,37 @@ import useSectionInView from "@/lib/hooks/useSectionInView";
 import SectionHeading from "../section-heading";
 import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
-import { validateContactFormData } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 import { ContactFormEmail } from "@/email/contact-form-email";
 import SubmitButton from "../submit-btn";
 import { usePending } from "@/context/pendingContex";
+import toast from "react-hot-toast";
+import { FaPaperPlane } from "react-icons/fa";
 
 export default function Contact() {
   const { ref } = useSectionInView({ section: "Contact", threshold: 0.5 });
-  const {setPending} = usePending();
-  
-  setPending(false)
+  const [ pending, setPending ] = useState(false);
 
   const handleContactFormSubmission = async (formData: FormData) => {
-   
-    const validate = validateContactFormData(formData);
+    /*     const validate = validateContactFormData(formData);
 
-    if (validate.error !== false) {
-      setPending(false);
-      return validate.error;
+    if (validate.error !== false) {return validate.error;} */
+
+    let emailTemplateToHTML = "";
+    try {
+      const emailTemplate = React.createElement(ContactFormEmail, {
+        message: formData.get("message") as string,
+        senderEmail: formData.get("senderEmail") as string,
+      }) as React.ReactElement;
+
+      emailTemplateToHTML = ReactDOMServer.renderToString(emailTemplate);
+    } catch (error) {
+      return {
+        error: "Error rendering email template",
+      };
     }
 
-    const emailTemplate = React.createElement(ContactFormEmail, {
-      message: formData.get("message") as string,
-      senderEmail: formData.get("senderEmail") as string,
-    }) as React.ReactElement;
-
-    const emailTemplateToHTML = ReactDOMServer.renderToString(emailTemplate);
-    const response = await sendEmail(formData, emailTemplateToHTML);
-    setPending(false);
-    return response;
+    return await sendEmail(formData, emailTemplateToHTML);
   };
 
   return (
@@ -58,8 +59,16 @@ export default function Contact() {
         className="mt-10 flex flex-col dark:text-black"
         action={async (FormData) => {
           setPending(true);
-          const res = await handleContactFormSubmission(FormData);
-          console.log(res);
+          const { error } = await handleContactFormSubmission(FormData);
+          setTimeout(() => {
+            setPending(false);
+          }, 1000);
+
+          if (error) {
+            toast.error(error);
+          }
+
+          toast.success("Thank you for your message!", { duration: 5000 });
         }}
       >
         <input
@@ -78,7 +87,20 @@ export default function Contact() {
           maxLength={5000}
         ></textarea>
 
-        <SubmitButton  />
+        <button
+          type="submit"
+          disabled={pending}
+          className="group flex items-center justify-center gap-2 h-[3rem] w-full sm:w-[12rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+        >
+          {pending ? (
+            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+          ) : (
+            <>
+              Send Message{" "}
+              <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+            </>
+          )}
+        </button>
       </form>
     </motion.section>
   );
