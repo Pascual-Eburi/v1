@@ -5,7 +5,7 @@ import { getErrorMessage, validateString } from "@/lib/utils";
 
 const resend = new Resend(`${process.env.RESEND_API_KEY}`);
 
-export async function sendEmail( formData : FormData, emailTemplate: string){
+export async function sendEmail( formData : FormData, emailTemplate: string) {
     const senderEmail = formData.get("senderEmail");
     const message = formData.get("message");
 
@@ -17,25 +17,22 @@ export async function sendEmail( formData : FormData, emailTemplate: string){
         return { error: "Invalid message" };
     }
 
-
-    let data;
-
     try {
-        data = await resend.emails.send({
-            from: "onboarding@resend.dev",
+        const id = await resend.emails.send({
+            from: "onboarding@resend.com",
             to: "pascualeburi@gmail.com",
             subject: "New message from personal website",
             reply_to: senderEmail,    
             html: emailTemplate 
-        }) 
-       
-        
+        });
+
+        return { id } ;
     } catch (error: unknown) {
         return {
             error: getErrorMessage(error)
         }
     }
 
-    console.log(data);
-    return data;
+
+    
 }
