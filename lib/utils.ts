@@ -66,3 +66,14 @@ export function validateString( value: unknown, maxLength: number ): value is st
     }
     return { error: false};
   }
+
+
+  /**
+   * Convert the characters of the given value in to lowercase excluding spaces.
+   * @param value string
+   * @returns string
+   */
+  export function convertToLower( value : string ) : string {
+     return value.toString().replace(/\s+/g, '').toLowerCase();
+
+  }
