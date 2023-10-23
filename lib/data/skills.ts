@@ -2,11 +2,9 @@
 
 import type { Skills } from "../types";
 
-import boostrap from "@/components/icons/bootstrap.svg";
-import bash from "@/components/icons/bash.svg";
 
   export const skills: Skills = {
-    'Front-End': [
+    'FrontEnd': [
       {name: 'HTML', image: ''},
       {name: 'CSS', image: ''},
       {name: 'JavaScript', image: ''},
@@ -16,7 +14,7 @@ import bash from "@/components/icons/bash.svg";
       {name: 'React Js', image: ''},
       {name: 'Next Js', image: ''},
     ],
-    'Back-End': [
+    'BackEnd': [
       {name: 'PHP', image: ''},
       {name: 'Python', image: ''},
       {name: 'Laravel', image: ''},
