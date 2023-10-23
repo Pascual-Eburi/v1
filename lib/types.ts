@@ -18,8 +18,8 @@ export type Skill = {
   }
   
 export type Skills = {
-    'Front-End': Skill[];
-    'Back-End': Skill[];
+    'FrontEnd': Skill[];
+    'BackEnd': Skill[];
     'Testing': Skill[];
     'Others': Skill[];
 }
@@ -58,4 +58,18 @@ export type PendingProviderProps = {
 export type PendingContextType = {
     pending: boolean,
     setPending: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+// types for theme
+export type Theme = "light" | "dark";
+
+// theme context provider props type
+export type ThemeContextProviderProps = {
+    children: React.ReactNode
+}
+
+export type ThemeContextType = {
+    theme: Theme,
+    setTheme: React.Dispatch<React.SetStateAction<Theme>>,
+    toggleTheme: () => void;
 }
