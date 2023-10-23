@@ -9,9 +9,9 @@ export default function Footer() {
       </small>
       <p className="text-xs text-center">
         <span className="font-semibold">About this website:</span> 
-        <span className="flex"> 
+        <span className="flex w-full"> 
             Made with <span className="mx-2"><BsFillHeartFill color="#f87171"/> </span> 
-            built with React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting.
+             & built with React & Next.js, TypeScript, Tailwind CSS, Framer Motion, Vercel hosting.
         </span>
       </p>
     </footer>
