@@ -9,10 +9,11 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import useSectionInView from "@/lib/hooks/useSectionInView";
+import { useThemeContext } from "@/context/theme-context";
 
 
 export default function Experiences() {
-  const theme = 'light';
+  const { theme } = useThemeContext();
   const {ref} = useSectionInView({section: "Experience", threshold: 0.75});
   return (
     <section id="experience"  ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
@@ -34,14 +35,18 @@ export default function Experiences() {
                 borderRight:
                   theme === "light"
                     ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
+                    : "0.4rem solid rgba(255, 255, 255, 0.05)",
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
                 background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
+                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.02)",
                 fontSize: "1.5rem",
+                zIndex: 1,
+                /* boxShadow: theme === "light" 
+                  ? "inherit" 
+                  : "0px 36px 89px rgb(0 0 0/4%),0px 23.3333px 52.1227px rgba(0,0,0,.03),0px 13.8667px 28.3481px rgba(0,0,0,.024),0px 7.2px 14.4625px rgb(0 0 0/2%),0px 2.93333px 7.25185px rgba(0,0,0,.016),0px 0.666667px 3.50231px rgba(0,0,0,.01);" */
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
