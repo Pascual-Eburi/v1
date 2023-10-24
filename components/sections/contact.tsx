@@ -4,37 +4,59 @@ import useSectionInView from "@/lib/hooks/useSectionInView";
 import SectionHeading from "../section-heading";
 import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { ContactFormEmail } from "@/email/contact-form-email";
-import SubmitButton from "../submit-btn";
-import { usePending } from "@/context/pendingContex";
 import toast from "react-hot-toast";
 import { FaPaperPlane } from "react-icons/fa";
+import { validateContactFormData } from "@/lib/utils";
 
 export default function Contact() {
   const { ref } = useSectionInView({ section: "Contact", threshold: 0.5 });
   const [ pending, setPending ] = useState(false);
+  const initialFormState = { senderEmail: "", message: "", }
 
-  const handleContactFormSubmission = async (formData: FormData) => {
-    /*     const validate = validateContactFormData(formData);
+  const [ data, setData ] = useState(initialFormState);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setData({ ...data, [event.target.name]: event.target.value });
+  }
 
-    if (validate.error !== false) {return validate.error;} */
+  const handleContactFormSubmission = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setPending(true);
+    const formData = new FormData(event.target as HTMLFormElement);
+    const { validationError } = validateContactFormData(formData);
+
+    if (validationError !== false) {
+      toast.error(validationError as string);
+      setPending(false);
+      return;
+    }
 
     let emailTemplateToHTML = "";
     try {
       const emailTemplate = React.createElement(ContactFormEmail, {
         message: formData.get("message") as string,
-        senderEmail: formData.get("senderEmail") as string,
+        senderEmail:formData.get("senderEmail") as string,
       }) as React.ReactElement;
 
       emailTemplateToHTML = ReactDOMServer.renderToString(emailTemplate);
+
     } catch (error) {
-      return {
-        error: "Error rendering email template",
-      };
+      toast.error("Error rendering email template");
+        return;
     }
 
-    return await sendEmail(formData, emailTemplateToHTML);
+    const {error} = await sendEmail(formData, emailTemplateToHTML);
+    if (error) {
+      toast.error(error);
+      setPending(false);
+      return;
+    }
+
+    setPending(false);
+    toast.success("Your message has been sent!. Thank you for your message!!", { duration: 5000 });
+    setData(initialFormState);
+    return;
   };
 
   return (
@@ -55,9 +77,9 @@ export default function Contact() {
         </a>{" "}
         or through this form.
       </p>
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (FormData) => {
+      <form id="contactForm" name="contactForm"
+        className="mt-10 flex flex-col dark:text-black" onSubmit={handleContactFormSubmission}
+/*         action={async (FormData) => {
           setPending(true);
           const { error } = await handleContactFormSubmission(FormData);
           setTimeout(() => {
@@ -69,7 +91,7 @@ export default function Contact() {
           }
 
           toast.success("Thank you for your message!", { duration: 5000 });
-        }}
+        }} */
       >
         <input
           type="email"
@@ -78,6 +100,8 @@ export default function Contact() {
           required
           maxLength={100}
           placeholder="jonhdoe@example.com..."
+          onChange={(e) => { handleChange(e); }}
+          value={data.senderEmail}
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-gray-800 dark:text-gray-400 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -85,6 +109,8 @@ export default function Contact() {
           placeholder="Your message"
           required
           maxLength={5000}
+          onChange={(e) => { handleChange(e); }}
+          value={data.message}
         ></textarea>
 
         <button
