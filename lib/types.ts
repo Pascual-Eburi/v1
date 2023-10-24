@@ -47,7 +47,7 @@ export type useSectionInViewProps = {
 
 // type for contact form validation response
 export type validateContactFormDataResponse = {
-    error: string | boolean
+    validationError: string | boolean
 }
 
 // PendingProvider types ActiveSectionContextProviderProps
@@ -68,6 +68,7 @@ export type ThemeContextProviderProps = {
     children: React.ReactNode
 }
 
+// type for themecontext
 export type ThemeContextType = {
     theme: Theme,
     setTheme: React.Dispatch<React.SetStateAction<Theme>>,
