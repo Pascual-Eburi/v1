@@ -55,16 +55,16 @@ export function validateString( value: unknown, maxLength: number ): value is st
 
     if(!validateString( senderEmail, 100)){
         return {
-            error: "Invalid email address"
+            validationError: "Invalid email address"
         };
     }
 
     if(!validateString( message, 5000)){
         return {
-            error: "Invalid message"
+            validationError: "Invalid message"
         };
     }
-    return { error: false};
+    return { validationError: false};
   }
 
 
