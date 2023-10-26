@@ -67,7 +67,7 @@ export default function Intro() {
         <span className="font-bold">Hello, I'm Pascual.</span> I'm a{" "}
         <span className="font-bold"> Web developer and SysAdmin </span>. I enjoy
         building <span className="italic">things for the web</span>. My focus is{" "}
-        <span className="underline"> PHP / Python - React / Vue </span>.
+        <span className="underline"> PHP | Python - React | Vue </span>.
       </motion.h1>
 
       <motion.div
