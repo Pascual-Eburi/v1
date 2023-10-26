@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import LocalStorage from '@/lib/localStorage';
+import { useLocalStorage } from '@/lib/hooks/useLocalStorage';
 import { Theme, ThemeContextProviderProps, ThemeContextType } from '@/lib/types';
 import { useEffect, useState, createContext, useContext } from 'react'
 
@@ -8,25 +8,28 @@ const themeContext = createContext<ThemeContextType | null> (null);
 
 
 export default function ThemeContextProvider({ children } : ThemeContextProviderProps) {
-    const [theme, setTheme] = useState<Theme>('light');
-    const storage = new LocalStorage('theme');
+    //const storage = new LocalStorage('theme');
+    const [stroredValue , setItem, getItem] = useLocalStorage('theme');
+
+    const initialTheme = getItem('theme') || 'light';
+    const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
 
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark');
-            storage.setItem('dark');
+            setItem('dark');
             document.documentElement.classList.add('dark');
 
         } else {
 
             setTheme('light');
-            storage.setItem('light');
+            setItem('light');
             document.documentElement.classList.remove('dark');
         }
     };
 
     useEffect( () => {
-        const localTheme = storage.getItem() as Theme | null; 
+        const localTheme = getItem('theme') as Theme; //storage.getItem() as Theme | null; 
         if (localTheme) {
             setTheme(localTheme);
 
@@ -36,7 +39,7 @@ export default function ThemeContextProvider({ children } : ThemeContextProvider
 
         } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             setTheme('dark');
-            storage.setItem('dark');
+            setItem('dark');
             document.documentElement.classList.add('dark');
         }
 
