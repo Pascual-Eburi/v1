@@ -38,7 +38,7 @@ export default function Skills() {
               >
       <SectionHeading> Tools and technologies </SectionHeading>
       <div className="p-10 md:flex md:gap-3">
-        <ul className="text-center md:text-left flex md:flex-col gap-0 md:gap-0 md:basis-1/4 text-gray-400 relative font-mono font-medium capitalize">
+        <ul className="text-center md:text-left flex md:flex-col gap-0 md:gap-0 md:basis-1/4 text-gray-400 relative font-medium capitalize text-xs">
           {skills_keys &&
             skills_keys.map((name, index) => (
               <li
@@ -46,11 +46,11 @@ export default function Skills() {
                   setActiveTab(name);
                 }}
                 key={name}
-                className={clsx("cursor-pointer p-3 relative font-semibold text-sm md:text-base", {
+                className={clsx("cursor-pointer p-3 relative font-bold text-sm md:text-base", {
                   "text-gray-900 dark:text-white": name == activeTab,
                 })}
               >
-                <span>{name} </span>
+                <span className="uppercase">{name} </span>
 
                 <span
                   className={clsx(
@@ -83,18 +83,21 @@ export default function Skills() {
                         viewport={{ once: false }}
                         transition={{ duration: 0.75, delay: index * 0.05 }}
                       key={index}
-                      className="bg-white borderBlack text-center flex justify-center flex-col items-center rounded-xl font-mono shadow-sm px-3 py-2 md:px-6 md:py-2 dark:bg-white/10 dark:text-white/80"
+                      className="bg-white borderBlack text-center flex justify-center flex-col items-center rounded-xl font-mono shadow-sm  px-3 md:px-6 py-2  md:py-2 dark:bg-white/10 dark:text-white/80"
                     >
                       {" "}
-                      <Image 
-                      alt={skill.name} 
-                      src={`/img/logos/${convertToLower(skill.name)}.png`} 
-                      width={250}
-                      height={250}
-                      quality="95"
-                      className="h-14 w-14 object-cover mb-2 aspect-square"
-                      />
-                      <span className="m-t-2 text-xs md:text-sm">{skill.name}</span>
+                        <Image 
+                        alt={skill.name} 
+                        src={`/img/logos/${convertToLower(skill.name)}.png`} 
+                        width={250}
+                        height={250}
+                        quality="95"
+                        priority={true}
+                        className="h-14 w-14 object-contain mb-2 aspect-square"
+                        />
+
+
+                      <span className=" m-t-2 text-xs md:text-sm">{skill.name}</span>
                     </motion.li>
                   ))}
               </ul>
