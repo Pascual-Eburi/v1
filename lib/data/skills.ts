@@ -21,7 +21,7 @@ import type { Skills } from "../types";
       {name: 'CodeIgniter', image: ''},
       {name: 'Django', image: ''},
       {name: 'MySQL', image: ''},
-      {name: 'PostreSQL', image: ''},
+      {name: 'PostgreSQL', image: ''},
       {name: 'Oracle', image: ''},
     ],
     'Testing': [
