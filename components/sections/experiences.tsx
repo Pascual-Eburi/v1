@@ -41,12 +41,12 @@ export default function Experiences() {
               icon={item.icon}
               iconStyle={{
                 background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.02)",
+                   theme === "light" ? "white" :  "#1D2432", //"rgba(255, 255, 255, 0.02)",
                 fontSize: "1.5rem",
-                zIndex: 1,
-                /* boxShadow: theme === "light" 
-                  ? "inherit" 
-                  : "0px 36px 89px rgb(0 0 0/4%),0px 23.3333px 52.1227px rgba(0,0,0,.03),0px 13.8667px 28.3481px rgba(0,0,0,.024),0px 7.2px 14.4625px rgb(0 0 0/2%),0px 2.93333px 7.25185px rgba(0,0,0,.016),0px 0.666667px 3.50231px rgba(0,0,0,.01);" */
+                 zIndex: 1, 
+                 boxShadow: theme === "light" 
+                  ? "0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);" 
+                  : "0 0 0 4px #1D2432, inset 0 2px 0 #1D2432, 0 3px 0 4px #1D2432;" 
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
