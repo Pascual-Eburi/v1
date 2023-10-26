@@ -9,7 +9,7 @@ export default function Footer() {
       </small>
       <p className="text-xs text-center">
         <span className="font-semibold">About this website:</span> 
-        <span className="flex w-full"> 
+        <span className="flex w-full align-center justify-center  text-center"> 
             Made with <span className="mx-2"><BsFillHeartFill color="#f87171"/> </span> 
              & built with React & Next.js, TypeScript, Tailwind CSS, Framer Motion, Vercel hosting.
         </span>
