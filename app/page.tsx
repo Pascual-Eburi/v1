@@ -5,7 +5,6 @@ import Projects from "@/components/sections/projects";
 import Skills from "@/components/sections/skills";
 import Experiences from "@/components/sections/experiences";
 import Contact from "@/components/sections/contact";
-import { PendingProvider } from "@/context/pendingContex";
 
 
 export default function Home() {
@@ -17,9 +16,7 @@ export default function Home() {
         <Projects />
          <Skills /> 
         <Experiences />
-        <PendingProvider>
-          <Contact />
-        </PendingProvider>
+        <Contact />
     </main>
   )
 }
