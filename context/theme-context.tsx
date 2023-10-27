@@ -11,7 +11,7 @@ export default function ThemeContextProvider({ children } : ThemeContextProvider
     //const storage = new LocalStorage('theme');
     const [stroredValue , setItem, getItem] = useLocalStorage('theme');
 
-    const initialTheme = getItem('theme') || 'light';
+    const initialTheme = window.localStorage.getItem('theme') as Theme  || 'light';
     const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
 
     const toggleTheme = () => {
