@@ -9,22 +9,22 @@ export const projectsData = [
     {
       title: "Automatricula",
       description:
-        "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-      tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+        "I developed this web application as part of my TFG. I used technologies such as React JS, Redux, JavaScript, Python, Django and PostgreSQL. This application will allow students in Equatorial Guinea to register for the selectividad online and access their grades. It also provides schools with the possibility of pre-registering their students online.",
+      tags: ["React", "JavaScript", "HTML", "CSS", "Python", "Django", "PostgreSQL"],
       imageUrl: HomeAutomatricula,
     },
     {
-      title: "rmtDev",
+      title: "API Automatricula",
       description:
-        "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-      tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+        "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+      tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
       imageUrl: HomeApiAutomatricula,
     },
     {
-      title: "Word Analytics",
+      title: "PHARMA",
       description:
-        "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-      tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+        "Web management system developed with PHP, JavaScript, MySQL, JQuery, Bootstrap and Ajax for the management of Inventory, HR, CRM, POS, Invoicing of a pharmacy a pharmacy..",
+      tags: ["PHP", "JavaScript", "MySQL", "Boostrap", "Jquery"],
       imageUrl: HomePharma,
     },
   ] as const;
