@@ -45,12 +45,13 @@ export default function Experiences() {
                 fontSize: "1.5rem",
                  zIndex: 1, 
                  boxShadow: theme === "light" 
-                  ? "0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);" 
-                  : "0 0 0 4px #1D2432, inset 0 2px 0 #1D2432, 0 3px 0 4px #1D2432;" 
+                 // boxShadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)"
+                  ? "0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)" 
+                  : "0 0 0 4px #1D2432, inset 0 2px 0 #1D2432, 0 3px 0 4px #1D2432" 
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
+              <p className="font-normal !mt-0 italic text-gray-500 dark:text-white/25">{item.location}</p>
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {item.description}
               </p>
