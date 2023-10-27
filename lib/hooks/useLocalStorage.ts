@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react';
 import type { Theme } from '../types';
 
@@ -20,9 +21,7 @@ export function useLocalStorage(key: string): [string | null, (value: Theme) => 
   };
 
   const getItem = (key: string) : Theme | null => {
-    return typeof window !== 'undefined' 
-    ? window.localStorage.getItem(key) as Theme 
-    :  null;
+    return  window.localStorage.getItem(key) as Theme ||  null;
   };
 
   return [storedValue, setItem, getItem];
