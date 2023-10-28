@@ -6,6 +6,7 @@ import ActiveSectionContextProvider from '@/context/activeSectionContext'
 import { Toaster } from 'react-hot-toast'
 import ThemeSwith from '@/components/theme-switch'
 import ThemeContextProvider from '@/context/theme-context'
+import LanguageSwith from '@/components/language-swith'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Footer />
             <Toaster position='top-right'/>
             <ThemeSwith />
+            <LanguageSwith />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
         </body>
