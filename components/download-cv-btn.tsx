@@ -2,16 +2,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { HiDownload } from "react-icons/hi";
 import Image from "next/image";
-import Spain from "@/public/img/spain.png";
-import UK from "@/public/img/uk.png";
-import France from "@/public/img/france.png";
-
-
-const CVLanguages = [
-    {name: 'Spanish', img: Spain, abbr: 'es' },
-    {name: 'English', img: UK, abbr: 'en' },
-    {name: 'French', img: France, abbr: 'fr' },
-] as const;
+import { CVLanguages } from "@/lib/data/languajes";
 
 export default function DownloadCVButton() {
   return (
