@@ -23,13 +23,13 @@ html.dark {
     @apply border border-black/10
 }
 
-.project-container {
+/* .project-container {
     max-width: 1000px;
     margin: 50px auto;
-}
+} */
 
 
-.project:not(:last-of-type) {
+/* .project:not(:last-of-type) {
     margin-bottom: 100px;
 }
 
@@ -42,7 +42,12 @@ html.dark {
     grid-template-columns: repeat(12, 1fr);
     -webkit-box-align: center;
     align-items: center;
-}
+} */
+
+/* .project{
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+} */
 
 @media screen and (max-width: 768px) {
     .project {
@@ -50,23 +55,23 @@ html.dark {
     }
 }
 
-.project-content {
+/* .project-content {
     position: relative;
     grid-column: 1/7;
     grid-row: 1/-1;
-}
+} */
 
-/* Estilo para elementos impares */
-.project:nth-of-type(odd) .project-content {
-    grid-column: 1/7; /* A la izquierda */
+/* Estilo para elementos impares *//* A la izquierda */
+/* .project:nth-of-type(odd) .project-content {
+    grid-column: 1/7; 
     text-align: left;
-}
+} */
 
-/* Estilo para elementos pares */
-.project:nth-of-type(even) .project-content {
-    grid-column: 7 / -1; /* A la derecha */
+/* Estilo para elementos pares */ /* A la derecha */
+/* .project:nth-of-type(even) .project-content {
+    grid-column: 7 / -1; 
     text-align: right;
-}
+} */
 
 @media (max-width: 768px){
     .project:nth-of-type(2n+1) .project-content {
@@ -93,24 +98,33 @@ html.dark {
     }
 }
 
-.project-content .project-label {
-    color: rgb(133, 76, 230); /* #64ffda */;
+/* .project-content .project-label {
+    color: rgb(133, 76, 230); 
     font-family: monospace;
-}
+} */
 
-.project-content .project-title {
+/* .project-content .project-title {
     font-size: 2rem;
     margin: 10px 0 30px;
     color: #eee;
-}
+} */
 
-.project-content .project-details {
+/* .project-content .project-details {
     font-size: 15px;
     line-height: 1.5;
     color: #aaa;
-}
+} 
 
-.project-content .project-details p {
+-------- continuacion
+    --navy-shadow: rgba(2,12,27,0.7);
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    --border-radius: 4px;
+    --light-navy: #112240;
+    --light-slate: #a8b2d1;
+    --fz-lg: 18px;
+*/
+
+/* .project-content .project-details p {
     box-shadow: 0 10px 30px -15px var(--navy-shadow);
     transition: var(--transition);
     position: relative;
@@ -120,7 +134,7 @@ html.dark {
     background-color: var(--light-navy);
     color: var(--light-slate);
     font-size: var(--fz-lg);
-}
+} */
 
 
 
@@ -131,37 +145,38 @@ html.dark {
     }
 }
 
-.project-content .project-details ul {
+/* .project-content .project-details ul {
     display: flex;
     margin-top: 20px;
-}
+} */
 
-.project-content .project-details ul li {
+/* .project-content .project-details ul li {
     margin-right: 20px;
     color: #aaa;
     font-family: monospace;
-}
+} */
 
-
-.project-img {
+/* #64ffda */
+/* #64ff8d */
+/* .project-img {
     position: relative;
+    background-color: rgb(237 233 254)
     z-index: -1;
-    background-color: rgb(237 233 254)/* #64ffda */;
-    background: linear-gradient(0.4turn,rgb(237 233 254) , rgb(168 85 247) /* #64ff8d */);
+    background: linear-gradient(0.4turn,rgb(237 233 254) , rgb(168 85 247) ;
     border-radius: 2px;
-    grid-row: 1/-1; /* Afecta a todos los elementos */
-}
+    grid-row: 1/-1; 
+} */
 
-/* Estilo para imágenes en elementos impares */
-.project:nth-of-type(odd) .project-img {
-    grid-column: 6 / -1; /* A la derecha */
-}
+/* Estilo para imágenes en elementos impares *//* A la derecha */
+/* .project:nth-of-type(odd) .project-img {
+    grid-column: 6 / -1; 
+} */
 
-/* Estilo para imágenes en elementos pares */
-.project:nth-of-type(even) .project-img {
-    grid-column: 1 / -6; /* A la izquierda */
+/* Estilo para imágenes en elementos pares *//* A la izquierda */
+/* .project:nth-of-type(even) .project-img {
+    grid-column: 1 / -6; 
 }
-
+ */
 @media screen and (max-width: 768px) {
     .project-img {
         height: 100%;
@@ -205,7 +220,7 @@ html.dark {
     }
 }
 
-.project .project-links {
+/* .project .project-links {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -213,9 +228,9 @@ html.dark {
     margin-top: 10px;
     margin-left: -10px;
     color: #ccd6f6;
-}
+} */
 
-.project:nth-of-type(odd) .project-links {
+/* .project:nth-of-type(odd) .project-links {
     -webkit-box-pack: start;
     justify-content: flex-start;
     margin-right: 0px;
@@ -228,4 +243,4 @@ html.dark {
     margin-left: 0px;
     margin-right: 10px;
 
-}
+} */
