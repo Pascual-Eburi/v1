@@ -11,7 +11,7 @@ export const projectsData = [
   {
       title: "Automatricula",
       description:
-        "I developed this web application as part of my TFG. I used technologies such as React JS, Redux, JavaScript, Python, Django and PostgreSQL. This application will allow students in Equatorial Guinea to register for the selectividad online and access their grades. It also provides schools with the possibility of pre-registering their students online.",
+        "I developed this web application as part of my TFG. This application will allow students in Equatorial Guinea to register for the selectividad online and access their grades. It also provides schools with the possibility of pre-registering their students online.",
         tags: ["React", "JavaScript", "HTML", "CSS", "Python", "Django", "PostgreSQL"],
         imageUrl: HomeAutomatricula,
         links: [
@@ -39,7 +39,7 @@ export const projectsData = [
     {
       title: "PHARMA",
       description:
-        "Web management system developed with PHP, JavaScript, MySQL, JQuery, Bootstrap and Ajax for the management of Inventory, HR, CRM, POS, Invoicing of a pharmacy a pharmacy..",
+        "Web management system developed with PHP, JavaScript, MySQL, JQuery, Bootstrap and Ajax for the management of Inventory, HR, CRM, POS, Invoicing of a pharmacy",
       tags: ["PHP", "JavaScript", "MySQL", "Boostrap", "Jquery"],
       imageUrl: HomePharma,
       links: [
