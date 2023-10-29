@@ -30,7 +30,7 @@ export default function Project({
       className="project group [&:not(:last-of-type)]:mb-[100px] relative grid gap-[10px] grid-rows-6 grid-cols-12 items-center  "
     >
       <div className="project-content relative /* col-[1/7] row-[1/-1] */ group-odd:col-[1/7] group-odd:text-left group-even:col-[7/-1] group-even:text-right">
-        <div className="project-label font-mono dark:text-blue-300 text-blue-950">Featured Project</div>
+        <div className="project-label font-mono dark:text-teal-400 text-blue-950">Featured Project</div>
         <h4 className="project-title text-[1.6rem] mt-[10px] ml-[0] mb-[30px] dark:text-[#eee] text-gray-700 font-bold">{title}</h4>
         <div className="project-details text-[15px] text-[#eee] leading-[1.5]">
           <p className="relative p-[25px] z-[2] text-[18px] transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)] rounded-[4px] bg-purple-200 dark:bg-[#112240] text-[#a8b2d1] ">
