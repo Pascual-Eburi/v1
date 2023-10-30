@@ -23,10 +23,10 @@ export default function Project({
   return (
     <motion.li
       ref={ref}
-      /*        style={{
+      style={{
         scale: scaleProgess,
         opacity: opacityProgess,
-      }} */
+      }}
       className="flex flex-col-reverse group [&:not(:last-of-type)]:mb-[100px] relative md:grid gap-[10px] md:grid-rows-6 md:grid-cols-12 items-center  shadow-2xl md:shadow-none"
     >
       <div className="flex flex-wrap flex-col relative md:row-[1/-1] md:group-odd:col-[1/7] text-left md:group-odd:text-left md:group-even:col-[7/-1] md:group-even:text-right px-8 pb-9 md:px-0 md:pb-0">
