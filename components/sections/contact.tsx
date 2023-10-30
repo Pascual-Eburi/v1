@@ -12,15 +12,19 @@ import { validateContactFormData } from "@/lib/utils";
 
 export default function Contact() {
   const { ref } = useSectionInView({ section: "Contact", threshold: 0.5 });
-  const [ pending, setPending ] = useState(false);
-  const initialFormState = { senderEmail: "", message: "", }
+  const [pending, setPending] = useState(false);
+  const initialFormState = { senderEmail: "", message: "" };
 
-  const [ data, setData ] = useState(initialFormState);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [data, setData] = useState(initialFormState);
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setData({ ...data, [event.target.name]: event.target.value });
-  }
+  };
 
-  const handleContactFormSubmission = async (event: FormEvent<HTMLFormElement>) => {
+  const handleContactFormSubmission = async (
+    event: FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
     setPending(true);
     const formData = new FormData(event.target as HTMLFormElement);
@@ -36,17 +40,16 @@ export default function Contact() {
     try {
       const emailTemplate = React.createElement(ContactFormEmail, {
         message: formData.get("message") as string,
-        senderEmail:formData.get("senderEmail") as string,
+        senderEmail: formData.get("senderEmail") as string,
       }) as React.ReactElement;
 
       emailTemplateToHTML = ReactDOMServer.renderToString(emailTemplate);
-
     } catch (error) {
       toast.error("Error rendering email template");
-        return;
+      return;
     }
 
-    const {error} = await sendEmail(formData, emailTemplateToHTML);
+    const { error } = await sendEmail(formData, emailTemplateToHTML);
     if (error) {
       toast.error(error);
       setPending(false);
@@ -54,7 +57,9 @@ export default function Contact() {
     }
 
     setPending(false);
-    toast.success("Your message has been sent!. Thank you for your message!!", { duration: 5000 });
+    toast.success("Your message has been sent!. Thank you for your message!!", {
+      duration: 5000,
+    });
     setData(initialFormState);
     return;
   };
@@ -69,7 +74,12 @@ export default function Contact() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <SectionHeading> Get in Touch </SectionHeading>
+      <SectionHeading>
+        <span className="text-indigo-400 block text-center text-sm">
+          Say Hello,
+        </span>
+        Get in Touch{" "}
+      </SectionHeading>
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:pascualeburi@gmail.com">
@@ -77,21 +87,11 @@ export default function Contact() {
         </a>{" "}
         or through this form.
       </p>
-      <form id="contactForm" name="contactForm"
-        className="mt-10 flex flex-col dark:text-black" onSubmit={handleContactFormSubmission}
-/*         action={async (FormData) => {
-          setPending(true);
-          const { error } = await handleContactFormSubmission(FormData);
-          setTimeout(() => {
-            setPending(false);
-          }, 1000);
-
-          if (error) {
-            toast.error(error);
-          }
-
-          toast.success("Thank you for your message!", { duration: 5000 });
-        }} */
+      <form
+        id="contactForm"
+        name="contactForm"
+        className="mt-10 flex flex-col dark:text-black"
+        onSubmit={handleContactFormSubmission}
       >
         <input
           type="email"
@@ -100,7 +100,9 @@ export default function Contact() {
           required
           maxLength={100}
           placeholder="jonhdoe@example.com..."
-          onChange={(e) => { handleChange(e); }}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           value={data.senderEmail}
         />
         <textarea
@@ -109,7 +111,9 @@ export default function Contact() {
           placeholder="Your message"
           required
           maxLength={5000}
-          onChange={(e) => { handleChange(e); }}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           value={data.message}
         ></textarea>
 
