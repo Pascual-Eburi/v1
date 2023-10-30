@@ -27,23 +27,32 @@ export default function Project({
         scale: scaleProgess,
         opacity: opacityProgess,
       }} */
-      className="project group [&:not(:last-of-type)]:mb-[100px] relative grid gap-[10px] grid-rows-6 grid-cols-12 items-center  "
+      className="flex flex-col-reverse group [&:not(:last-of-type)]:mb-[100px] relative md:grid gap-[10px] md:grid-rows-6 md:grid-cols-12 items-center  shadow-2xl md:shadow-none"
     >
-      <div className="project-content relative /* col-[1/7] row-[1/-1] */ group-odd:col-[1/7] group-odd:text-left group-even:col-[7/-1] group-even:text-right">
-        <div className="project-label font-mono dark:text-teal-400 text-blue-950">Featured Project</div>
-        <h4 className="project-title text-[1.6rem] mt-[10px] ml-[0] mb-[30px] dark:text-[#eee] text-gray-700 font-bold">{title}</h4>
-        <div className="project-details text-[15px] text-[#eee] leading-[1.5]">
-          <p className="relative p-[25px] z-[2] text-[18px] transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)] rounded-[4px] bg-purple-200 dark:bg-[#112240] text-[#a8b2d1] ">
+      <div className="flex flex-wrap flex-col relative md:row-[1/-1] md:group-odd:col-[1/7] text-left md:group-odd:text-left md:group-even:col-[7/-1] md:group-even:text-right px-8 pb-9 md:px-0 md:pb-0">
+        <div className="md:block my-4 md:my-0 flex flex-row-reverse items-center justify-between">
+          <div className="project-label font-mono text-teal-400">
+            Featured Project
+          </div>
+          <h4 className="project-title text-[1.4rem] md:mt-[10px] ml-[0] md:mb-[30px] dark:text-white/80 text-gray-600 font-bold">
+            {title}
+          </h4>
+        </div>
+        <div className="project-details text-[15px] text-[#eee] leading-[1.5] ">
+          <p className="relative md:p-[25px] mb-4 md:mb-0 z-[2] text-[16px] transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)] rounded-[4px] md:bg-gray-50 md:dark:bg-[#112240] dark:text-[#a8b2d1] text-gray-500 md:shadow-xl">
             {description}
           </p>
-          <ul className="flex mt-[10px]">
+          <ul className="flex mt-[10px] flex-wrap">
             {tags.map((tag, index) => (
-              <li 
-                  className="mr-[20px] text-[#aaa] font-mono"
-                  key={index}>{tag}</li>
+              <li
+                className="mr-[20px] dark:text-[#aaa] text-gray-500 font-mono"
+                key={index}
+              >
+                {tag}
+              </li>
             ))}
           </ul>
-          <div className="project-links flex items-center relative mt-[10px] text-[#ccd6f6] group-odd:justify-start group-odd:ml-0 group-odd:mr-[10px] group-even:justify-end end group-even:mr-[10px] group-even:ml-0 ">
+          <div className="project-links flex items-center relative mt-[10px] dark:text-[#ccd6f6] text-slate-400 justify-end md:group-odd:justify-start md:group-odd:ml-0 md:group-odd:mr-[10px] md:group-even:justify-end md:group-even:mr-[10px] md:group-even:ml-0 ">
             {links.map((link, index) => (
               <a
                 key={index}
@@ -52,21 +61,20 @@ export default function Project({
                 target="_blank"
                 title={link.name}
                 rel="noopener noreferrer"
-                className="text-2xl rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack hover:opacity-[.5] "
+                className="text-2xl rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer hover:opacity-[.5] "
               >
                 {link.icon}
               </a>
             ))}
-
           </div>
         </div>
       </div>
 
-      <div className="project-img relative z-[-1] bg-violet-100 rounded-[2px] row-[1/-1] group-odd:col-[6/-1] group-even:col-[1/-6] before:content-[''] before:abosolute before:w-full before:h-full before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-[3] before:bg-[#0a192f] before:mix-blend-screen before:rounded-[2px] bg-gradient-to-r from-[#fbe2e3]  to-[#dbd7fb] dark:from-[#946263] dark:to-[#676394] ">
+      <div className="relative z-[-1] rounded-[2px] md:row-[1/-1] md:group-odd:col-[6/-1] md:group-even:col-[1/-6] before:content-[''] before:abosolute before:w-full before:h-full before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-[3] before:bg-[#0a192f] before:mix-blend-screen before:rounded-[2px] bg-transparent  md:bg-gradient-to-r md:to-[#d5e2f6]  md:from-[#578cdb] md:dark:from-[#578cdb] md:dark:to-[#163769] group-hover:scale-100 transition duration-[0.1s] group-hover:to-[#fff] group-hover:from-white">
         <Image
           alt="Project I worked on"
           src={imageUrl}
-          className="max-w-full w-full align-middle rounded-[2px] relative mix-blend-multiply grayscale-[100] contrast-[1]"
+          className="max-w-full w-full h-full align-middle aspect-video rounded-[2px] relative mix-blend-multiply md:grayscale-[100] contrast-[1] brightness-[90%] md:brightness-100 shadow-none group-hover:grayscale-0 "
         />
       </div>
     </motion.li>
