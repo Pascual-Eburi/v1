@@ -1,4 +1,5 @@
-import { validateContactFormDataResponse } from "./types";
+
+import type { validateContactFormDataResponse } from "./types";
 
 /**
  * Validates the given value.
