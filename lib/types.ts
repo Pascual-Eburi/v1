@@ -1,6 +1,8 @@
 import {links} from "@/lib/data/links"
 import { projectsData } from "./data/projects"
 import { skills } from "./data/skills"
+//import { IconBaseProps } from 'react-icons/lib/cjs';
+import { IconBaseProps } from 'react-icons';
 
 // type for section heading props
 export type SectionHeadingProps = {
@@ -50,18 +52,9 @@ export type validateContactFormDataResponse = {
     validationError: string | boolean
 }
 
-// PendingProvider types ActiveSectionContextProviderProps
-export type PendingProviderProps = {
-    children : React.ReactNode
-}
-
-export type PendingContextType = {
-    pending: boolean,
-    setPending: React.Dispatch<React.SetStateAction<boolean>>
-}
 
 // types for theme
-export type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | "system";
 
 // theme context provider props type
 export type ThemeContextProviderProps = {
@@ -70,7 +63,16 @@ export type ThemeContextProviderProps = {
 
 // type for themecontext
 export type ThemeContextType = {
-    theme: Theme,
-    setTheme: React.Dispatch<React.SetStateAction<Theme>>,
-    toggleTheme: () => void;
+    theme: Theme | null,
+    setTheme: React.Dispatch<React.SetStateAction<Theme | null >>,
+    toggleTheme: (theme: Theme) => void;
+
+}
+
+
+// types for theme 
+export type themePropsType = {
+    icon: React.FunctionComponentElement<IconBaseProps>;
+    text: Theme
+
 }
