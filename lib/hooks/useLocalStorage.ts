@@ -2,7 +2,15 @@
 import { useState, useEffect } from 'react';
 import type { Theme } from '../types';
 
-export function useLocalStorage(key: string): [string | null, (value: Theme) => void, (key: string) => string | null] {
+type useLocalStorageProps = {
+  storedValue: Theme | null, 
+  setItem: (value: Theme) => void, 
+  getItem:  (key: string) => string | null, 
+  removeItem:  (key: string) => void
+}
+
+
+export function useLocalStorage(key: string): useLocalStorageProps {
   const [storedValue, setStoredValue] = useState<Theme | null>(null);
 
   useEffect(() => {
@@ -10,6 +18,7 @@ export function useLocalStorage(key: string): [string | null, (value: Theme) => 
       const item = window.localStorage.getItem(key) as Theme | null;
       
       setStoredValue(item);
+      
     }
   },  [key]);
 
@@ -20,9 +29,20 @@ export function useLocalStorage(key: string): [string | null, (value: Theme) => 
     }
   };
 
-  const getItem = (key: string) : Theme | null => {
-    return  window.localStorage.getItem(key) as Theme ||  null;
+  const getItem =  (key: string) : Theme | null => {
+    if( typeof window !== 'undefined' ){
+      return window.localStorage.getItem(key) as Theme ||  null
+    }else{
+      console.log('stored', storedValue)
+      return storedValue;
+    }
+    // return  null;
   };
+  const removeItem = (key: string) =>{ 
+    window.localStorage.removeItem(key)
+  }
 
-  return [storedValue, setItem, getItem];
+  
+
+  return {storedValue, setItem, getItem, removeItem};
 }
