@@ -1,12 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { BsMoon, BsSun } from "react-icons/bs";
 import { useThemeContext } from "@/context/theme-context";
 import { themeOptions } from "@/lib/data/themes";
+import { useEffect, useState } from "react";
 
 export default function ThemeSwith() {
   const { theme, toggleTheme } = useThemeContext();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-5 right-5 flex flex-col align-middle text-center justify-center gap-0 shadow-2xl bg-opacity-80 backdrop-blur-[0.5rem] border rounded-full bg-white border-white border-opacity-40 dark:bg-slate-800 dark:border-slate-800">
