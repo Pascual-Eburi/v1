@@ -6,6 +6,7 @@ import {
   ThemeContextProviderProps,
   ThemeContextType,
 } from "@/lib/types";
+
 import { useEffect, useState, createContext, useContext } from "react";
 
 const themeContext = createContext<ThemeContextType | null>(null);
@@ -14,88 +15,108 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   //const storage = new LocalStorage('theme');
-  const { storedValue, setItem, getItem } = useLocalStorage("theme");
+  const { storedValue, setItem, getItem, removeItem } =
+    useLocalStorage("theme");
 
   const initialTheme =
     typeof window !== "undefined"
-      ? (window.localStorage.getItem("theme") as Theme) || "light"
-      : "light";
+      ? window.localStorage.getItem("theme") || "system"
+      : "system";
 
-  const [theme, setTheme] = useState<Theme | null>(storedValue as Theme);
-  console.log("Guardado - FUERA EFFECT", storedValue);
+  const darkQuery =
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)")
+      : null;
+
+  const _html =
+    typeof document !== "undefined" ? document.documentElement : null;
+
+  const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
   //let _html: HTMLElement = document.documentElement;
 
-  const toggleTheme = (newTheme: Theme) => {
-    const html = document.documentElement;
-    setTheme(newTheme);
-
-    switch (newTheme) {
-      case "dark":
-        html.classList.add("dark");
-        setItem("dark");
-        break;
-
-      case "light":
-        html.classList.remove("dark");
-        setItem("light");
-        break;
-      default:
-        localStorage.removeItem("theme");
-
-        break;
+  const toggleDark = () => {
+    if (!_html) {
+      return;
     }
-
-    console.log("Tema", theme);
+    _html.classList.add("dark");
+    setItem("dark");
   };
 
-  useEffect(() => {
-    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const localTheme = getItem("theme");
-    if (!localTheme) {
-      toggleTheme("system");
-      setTheme("system");
+  const toggleLight = () => {
+    if (!_html) {
+      return;
+    }
+    _html.classList.remove("dark");
+    setItem("light");
+  };
+
+  const toggleSystem = () => {
+    removeItem("theme");
+  };
+
+  const onWindowMatch = () => {
+    if (darkQuery === null || _html === null) {
+      console.log(
+        "Return onWindowMatch",
+        "\nhtml",
+        _html,
+        "\ndarkquery",
+        darkQuery
+      );
       return;
     }
 
-    console.log("TEMA LOCAL", localTheme);
-    console.log("Guardado - DENTRO EFFECT", storedValue);
-
-    if (localTheme === "dark" || darkQuery.matches) {
-      //document.documentElement.classList.add("dark");
-      toggleTheme("dark");
-    } else {
-      toggleTheme("light");
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && darkQuery.matches)
+    ) {
+      _html.classList.add("dark");
+      return;
     }
-  }, []);
+
+    _html.classList.remove("dark");
+    return;
+  };
 
   useEffect(() => {
-    /*     const localTheme = getItem("theme") as Theme; //storage.getItem() as Theme | null;
-    if (localTheme) {
-      setTheme(localTheme);
+    onWindowMatch();
+    //const old = (window.localStorage.getItem("theme") as Theme) ?? "system";
+    toggleTheme(theme);
+  }, [theme]);
 
-      if (localTheme === "dark") {
-        _html.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      setItem("dark");
-      _html.classList.add("dark");
-    } */
-    /*     switch (theme) {
+  const toggleTheme = (newTheme: Theme) => {
+    // const html = document.documentElement;
+    setTheme(newTheme !== null ? newTheme : "system");
+
+    switch (newTheme) {
       case "dark":
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
+        toggleDark();
         break;
 
       case "light":
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
+        toggleLight();
         break;
       default:
-        localStorage.removeItem("theme");
+        toggleSystem();
+        onWindowMatch();
+
         break;
-    } */
-  }, [theme]);
+    }
+  };
+
+  darkQuery?.addEventListener("change", (e) => {
+    if (!_html || "theme" in localStorage) {
+      return;
+    }
+
+    if (!e.matches) {
+      _html.classList.remove("dark");
+      return;
+    }
+
+    _html.classList.add("dark");
+    return;
+  });
 
   useEffect(() => {
     if (theme === "dark") {
@@ -110,7 +131,7 @@ export default function ThemeContextProvider({
   }, [theme]);
 
   return (
-    <themeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <themeContext.Provider value={{ theme, setTheme, toggleTheme, darkQuery }}>
       {children}
     </themeContext.Provider>
   );
