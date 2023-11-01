@@ -14,12 +14,12 @@ export function useLocalStorage(key: string): useLocalStorageProps {
   const [storedValue, setStoredValue] = useState<Theme | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const item = window.localStorage.getItem(key) as Theme | null;
+    if (typeof window === 'undefined') {return; }
+    
+    const item = window.localStorage.getItem(key) as Theme | null;
+    setStoredValue(item);
       
-      setStoredValue(item);
-      
-    }
+    
   },  [key]);
 
   const setItem = (value: Theme) => {
