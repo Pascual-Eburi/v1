@@ -64,8 +64,9 @@ export type ThemeContextProviderProps = {
 // type for themecontext
 export type ThemeContextType = {
     theme: Theme | null,
-    setTheme: React.Dispatch<React.SetStateAction<Theme | null >>,
+    setTheme: React.Dispatch<React.SetStateAction<Theme>>,
     toggleTheme: (theme: Theme) => void;
+    darkQuery: MediaQueryList | null
 
 }
 
