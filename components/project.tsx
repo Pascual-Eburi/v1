@@ -34,11 +34,11 @@ export default function Project({
           <div className="project-label font-mono text-teal-400">
             Featured Project
           </div>
-          <h4 className="project-title text-[1.4rem] md:mt-[10px] ml-[0] md:mb-[30px] dark:text-white/80 text-gray-600 font-bold">
+          <h4 className="text-[1.4rem] md:mt-[10px] ml-[0] md:mb-[30px] dark:text-white/80 text-gray-600 font-bold">
             {title}
           </h4>
         </div>
-        <div className="project-details text-[15px] text-[#eee] leading-[1.5] ">
+        <div className="text-[15px] text-[#eee] leading-[1.5] ">
           <p className="relative md:p-[25px] mb-4 md:mb-0 z-[2] text-[16px] transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)] rounded-[4px] md:bg-gray-50 md:dark:bg-[#112240] dark:text-[#a8b2d1] text-gray-500 md:shadow-xl">
             {description}
           </p>
@@ -52,7 +52,7 @@ export default function Project({
               </li>
             ))}
           </ul>
-          <div className="project-links flex items-center relative mt-[10px] dark:text-[#ccd6f6] text-slate-400 justify-end md:group-odd:justify-start md:group-odd:ml-0 md:group-odd:mr-[10px] md:group-even:justify-end md:group-even:mr-[10px] md:group-even:ml-0 ">
+          <div className=" flex items-center relative mt-[10px] dark:text-[#ccd6f6] text-slate-400 justify-end md:group-odd:justify-start md:group-odd:ml-0 md:group-odd:mr-[10px] md:group-even:justify-end md:group-even:mr-[10px] md:group-even:ml-0 ">
             {links.map((link, index) => (
               <a
                 key={index}
