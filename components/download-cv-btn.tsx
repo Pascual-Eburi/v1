@@ -25,32 +25,31 @@ export default function DownloadCVButton() {
       >
         <Menu.Items className="absolute right-0 !z-20 mt-2 w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-700">
           <div className="py-1">
-            {
-                CVLanguages.map( (lang, index) => (
-                    <Fragment key={index}>
-                        <Menu.Item>
-                        {({ active }) => (
-                        <a
-                            href={`/docs/CV/${lang.abbr}/resume.pdf`}
-                            download
-                            className={
-                             "flex items-center hover:bg-gray-100 gap-2 px-4 py-2 text-sm text-gray-700 dark:text-white/80 dark:hover:bg-white/10 dark:focus:bg-white/10"}
-                        >
-                            <Image
-                                width="90"
-                                height="90"
-                                src={lang.img}
-                                alt={lang.name}
-                                className="w-[2rem] h-[2rem] object-cover"
-                            />
-                        
-                            <span>{lang.name} version </span>
-                        </a>
-                        )}
-                    </Menu.Item> 
-                    </Fragment>
-                ))
-            }
+            {CVLanguages.map((lang, index) => (
+              <Fragment key={index}>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href={`/docs/CV/${lang.abbr}/resume.pdf`}
+                      download
+                      className={
+                        "flex items-center hover:bg-gray-100 gap-2 px-4 py-2 text-sm text-gray-700 dark:text-white/80 dark:hover:bg-white/10 dark:focus:bg-white/10"
+                      }
+                    >
+                      <Image
+                        width="90"
+                        height="90"
+                        src={lang.img}
+                        alt={lang.name}
+                        className="w-[1rem] h-[1rem] object-cover"
+                      />
+
+                      <span>{lang.name} version </span>
+                    </a>
+                  )}
+                </Menu.Item>
+              </Fragment>
+            ))}
           </div>
         </Menu.Items>
       </Transition>
