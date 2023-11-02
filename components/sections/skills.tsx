@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { Skill, SkillTabName, Skills } from "@/lib/types";
 import Image from "next/image";
-import python from "@/lib/icons/python.png";
 
 import { motion } from "framer-motion";
 import useSectionInView from "@/lib/hooks/useSectionInView";
@@ -45,7 +44,7 @@ export default function Skills() {
         technologies
       </SectionHeading>
       <div className="p-10 md:flex md:gap-3">
-        <ul className="text-center md:text-left flex md:flex-col gap-0 md:gap-0 md:basis-1/4 text-gray-400 relative font-medium capitalize text-xs">
+        <ul className="text-center md:text-right flex justify-center md:flex-col gap-0 md:gap-0 md:basis-1/4 text-gray-400 relative font-medium">
           {skills_keys &&
             skills_keys.map((name, index) => (
               <li
@@ -54,17 +53,18 @@ export default function Skills() {
                 }}
                 key={name}
                 className={clsx(
-                  "cursor-pointer p-3 relative font-bold text-sm md:text-sm",
+                  "cursor-pointer p-3 relative font-bold text-[.7rem] m-0 dark:text-white/30",
                   {
-                    "text-gray-900 dark:text-white": name == activeTab,
+                    "text-gray-900 dark:text-white/90 md:bg-gradient-to-r md:from-[transparent]  md:to-gray-100 md:dark:from-[transparent] md:dark:to-[#163769] ":
+                      name == activeTab,
                   }
                 )}
               >
-                <span className="uppercase">{name} </span>
+                <span className="capitalize">{name} </span>
 
                 <span
                   className={clsx(
-                    "rounded-full absolute left-0 bottom-0 md:top-0 w-full h-1 md:w-1 md:h-full z-10",
+                    "absolute right-0 bottom-0 md:top-0 w-full h-1 md:w-1 md:h-full z-10 m-0 p-0",
                     {
                       "bg-gray-900 dark:bg-white": name === activeTab,
                       "bg-gray-100 dark:bg-gray-600": name != activeTab,
@@ -91,7 +91,7 @@ export default function Skills() {
                       viewport={{ once: false }}
                       transition={{ duration: 0.75, delay: index * 0.05 }}
                       key={index}
-                      className="bg-white borderBlack text-center flex justify-center flex-col items-center rounded-xl font-mono shadow-sm  px-3 md:px-6 py-2  md:py-2 dark:bg-white/10 dark:text-white/80"
+                      className="bg-white text-center flex justify-center flex-col items-center rounded-2xl font-mono shadow-sm border-2 dark:shadow-2xl  px-3 md:px-6 py-2  md:py-2 dark:bg-[#141528]/70 dark:text-white/80 dark:hover:bg-[#1d1e35] dark:border-4 border-dashed dark:border-[#1d1e35] transition duration-100 hover:scale-105"
                     >
                       {" "}
                       <Image
@@ -101,7 +101,9 @@ export default function Skills() {
                         height={250}
                         quality="95"
                         priority={true}
-                        className="h-14 w-14 object-contain mb-2 aspect-square"
+                        className={`h-14 w-14 object-contain mb-2 aspect-square !max-w-[40px] !max-h-[40px] ${convertToLower(
+                          skill.name
+                        )}-logo`}
                       />
                       <span className=" m-t-2 text-xs md:text-sm">
                         {skill.name}
