@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
-import {
+import type {
   Theme,
   ThemeContextProviderProps,
   ThemeContextType,
@@ -14,9 +14,7 @@ const themeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  //const storage = new LocalStorage('theme');
-  const { storedValue, setItem, getItem, removeItem } =
-    useLocalStorage("theme");
+  const { setItem, removeItem } = useLocalStorage("theme");
 
   const initialTheme =
     typeof window !== "undefined"
@@ -32,7 +30,6 @@ export default function ThemeContextProvider({
     typeof document !== "undefined" ? document.documentElement : null;
 
   const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
-  //let _html: HTMLElement = document.documentElement;
 
   const toggleDark = () => {
     if (!_html) {
@@ -56,13 +53,6 @@ export default function ThemeContextProvider({
 
   const onWindowMatch = () => {
     if (darkQuery === null || _html === null) {
-      console.log(
-        "Return onWindowMatch",
-        "\nhtml",
-        _html,
-        "\ndarkquery",
-        darkQuery
-      );
       return;
     }
 
@@ -80,12 +70,9 @@ export default function ThemeContextProvider({
 
   useEffect(() => {
     onWindowMatch();
-    //const old = (window.localStorage.getItem("theme") as Theme) ?? "system";
-    toggleTheme(theme);
   }, [theme]);
 
   const toggleTheme = (newTheme: Theme) => {
-    // const html = document.documentElement;
     setTheme(newTheme !== null ? newTheme : "system");
 
     switch (newTheme) {
@@ -119,14 +106,13 @@ export default function ThemeContextProvider({
   });
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.head
-        .querySelector("meta[name=theme-color]")
-        ?.setAttribute("content", "rgb(3 7 18)");
+    const metaThemeColor = document.head.querySelector(
+      "meta[name=theme-color]"
+    );
+    if (theme === "dark" && darkQuery?.matches) {
+      metaThemeColor?.setAttribute("content", "rgba(3,7,18,1)");
     } else {
-      document.head
-        .querySelector("meta[name=theme-color]")
-        ?.setAttribute("content", "#fff");
+      metaThemeColor?.setAttribute("content", "#fff");
     }
   }, [theme]);
 
