@@ -1,5 +1,5 @@
 "use client";
-import type { ProjectProps } from "@/lib/types";
+import type { FeaturedProjectProps } from "@/lib/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -10,7 +10,7 @@ export default function Project({
   tags,
   imageUrl,
   links,
-}: ProjectProps) {
+}: FeaturedProjectProps) {
   const ref = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
