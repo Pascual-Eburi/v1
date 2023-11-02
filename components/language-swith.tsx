@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { CVLanguages } from "@/lib/data/languajes";
@@ -17,15 +17,6 @@ export default function LanguageSwith() {
   const [language, setLanguage] = useState<Language>(
     initialLanguage ?? CVLanguages[0]
   );
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <div className="fixed bottom-5 left-[3rem] ">
