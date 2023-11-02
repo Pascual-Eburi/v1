@@ -7,7 +7,7 @@ import {FiGithub} from "react-icons/fi"
 const GithubIcon = React.createElement(FiGithub);
 
 // projects data
-export const projectsData = [
+export const FeaturedProjects = [
   {
       title: "Automatricula",
       description:
@@ -50,4 +50,87 @@ export const projectsData = [
         }
       ]
     },
+  ] as const;
+
+
+export const OtherNotableProjects = [
+      {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
+            {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
+            {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
+            {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
+            {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
+            
+      {
+        title: "API Automatricula",
+        description:
+          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/automatricula",
+          }
+        ]
+      },
   ] as const;
