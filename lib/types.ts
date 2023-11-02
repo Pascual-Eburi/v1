@@ -1,5 +1,5 @@
 import {links} from "@/lib/data/links"
-import { projectsData } from "./data/projects"
+import { FeaturedProjects, OtherNotableProjects } from "./data/projects"
 import { skills } from "./data/skills"
 import { StaticImageData } from "next/image";
 import { IconBaseProps } from 'react-icons';
@@ -12,8 +12,10 @@ export type SectionHeadingProps = {
 export type SectionName = (typeof links[number]["name"])
 
 // type for projects
-export type ProjectProps = (typeof projectsData)[number]
+export type FeaturedProjectProps = (typeof FeaturedProjects)[number]
+export type OtherNotableProjectsProps = (typeof OtherNotableProjects)[number]
 
+// skils ---
 export type Skill = {
     name: string;
     image: string;
