@@ -2,10 +2,11 @@
 import Spain from "@/public/img/spain.png";
 import UK from "@/public/img/uk.png";
 import France from "@/public/img/france.png";
+import type { Language } from "../types";
 
 
-export const CVLanguages = [
+export const CVLanguages: Language[] = [
     {name: 'Spanish', img: Spain, abbr: 'es' },
     {name: 'English', img: UK, abbr: 'en' },
     {name: 'French', img: France, abbr: 'fr' },
-] as const;
+];
