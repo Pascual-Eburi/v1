@@ -2,10 +2,11 @@
 "use client";
 
 import React from "react";
-import { projectsData } from "@/lib/data/projects";
+import { FeaturedProjects } from "@/lib/data/projects";
 import SectionHeading from "../section-heading";
 import Project from "../project";
 import useSectionInView from "@/lib/hooks/useSectionInView";
+import OtherNotableProjects from "../otherNotableProjects";
 
 export default function Projects() {
   // check when component is in view to set active class to his link
@@ -22,12 +23,14 @@ export default function Projects() {
       </SectionHeading>
 
       <ul className="max-w-[1000px] mx-auto my-[50px] ">
-        {projectsData.map((project, index) => (
+        {FeaturedProjects.map((project, index) => (
           <React.Fragment key={index}>
             <Project {...project} />
           </React.Fragment>
         ))}
       </ul>
+
+      <OtherNotableProjects />
     </section>
   );
 }
