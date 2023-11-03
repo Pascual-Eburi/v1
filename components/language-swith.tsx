@@ -1,23 +1,32 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { CVLanguages } from "@/lib/data/languajes";
 import type { Language } from "@/lib/types";
 
 export default function LanguageSwith() {
+  const [mounted, setMounted] = useState(false);
   const browserLanguage =
     typeof navigator !== "undefined" ? navigator.language.split("-")[0] : "en";
 
+  const fallBackLanguage = CVLanguages[0] as Language;
   const initialLanguage: Language | undefined = CVLanguages.find(
     (option) => option.abbr === browserLanguage
   );
 
   const [language, setLanguage] = useState<Language>(
-    initialLanguage ?? CVLanguages[0]
+    initialLanguage ?? fallBackLanguage
   );
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return;
+  }
   return (
     <div className="fixed bottom-5 left-[3rem] ">
       <Menu as="div" className="relative inline-block text-left">
