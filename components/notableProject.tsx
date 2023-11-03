@@ -1,5 +1,6 @@
-import type { OtherNotableProjectsProps } from "@/lib/types";
 import React from "react";
+import { motion } from "framer-motion";
+import type { OtherNotableProjectsProps } from "@/lib/types";
 import { IconFolder } from "./icons";
 
 export default function NotableProject({
@@ -9,7 +10,13 @@ export default function NotableProject({
   links,
 }: OtherNotableProjectsProps) {
   return (
-    <li className="relative cursor-pointer">
+    <motion.li
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.75, delay: 0.05 }}
+      className="relative cursor-pointer"
+    >
       <div className="group relative h-full flex flex-col items-start justify-between py-[2rem] px-[1.75rem] overflow-auto transition-all rounded-[4px] dark:hover:bg-[#112240] dark:bg-[#0a192f] bg-gray-50 shadow-sm dark:shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]  hover:-translate-y-2.5  duration-75">
         <header>
           <div className="flex justify-between items-center mb-[30px]">
@@ -42,10 +49,10 @@ export default function NotableProject({
           </div>
         </header>
         <footer>
-          <ul className="flex mt-[20px] flex-wrap">
+          <ul className="flex mt-[20px] flex-wrap gap-2">
             {tags.map((tag, index) => (
               <li
-                className="mr-[20px] dark:text-[#aaa] text-zinc-600 font-mono text-[12px] leading-[1.5] "
+                className="dark:text-[#aaa] text-zinc-600 font-mono text-[12px] leading-[1.5] "
                 key={index}
               >
                 {tag}
@@ -54,6 +61,6 @@ export default function NotableProject({
           </ul>
         </footer>
       </div>
-    </li>
+    </motion.li>
   );
 }
