@@ -25,8 +25,8 @@ export const FeaturedProjects = [
       {
         title: "API Automatricula",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "Developed using the   . This API allows efficient communication between the backend and the frontend of the automatricula`s application",
+        tags: ["Python", "  ", "Postman", "APIs", "Pytest"],
         imageUrl: HomeApiAutomatricula,
         links: [
           {
@@ -55,81 +55,95 @@ export const FeaturedProjects = [
 
 export const OtherNotableProjects = [
       {
-        title: "API Automatricula",
+        title: "Personal Porfolio",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "First iteration of my personal website built with React, Next.js App, Framer Motion, TypeScript, Tailwind CSS",
+        tags: ["Typescript", "React Js", "Tailwind CSS", "Framer Motion", "Next.js", "Jest", "Cypress"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/v1",
           }
         ]
       },
             {
-        title: "API Automatricula",
+        title: "Car Tracking App",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "A Car Tracking Implementation using React, Java, Sockets, SpringBoot",
+        tags: ["React Js", "Java", "Postman", "Web Sockets", "SpringBoot", "HTML", "CSS"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/car-tracker",
           }
         ]
       },
             {
-        title: "API Automatricula",
+        title: "Price Tracker App ",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "Next.js 13 & TypeScript eCommerce product Price Tracker",
+        tags: ["Next.js", " TypeScript ", "Postman", "Web Scraping", "Data Scraping"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/price-tracker",
           }
         ]
       },
             {
-        title: "API Automatricula",
+        title: "Laravel + Livewire Ecommerce",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "Implementation of an online shop from scratch following SOLID principles and the MVC design pattern.",
+        tags: ["PHP", "Livewire", "Laravel", "MVC", "MySQL", "MTML", 'CSS3', 'Pest', 'Laravel Dusk'],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/laravel_livewire_ecommerce",
           }
         ]
       },
             {
-        title: "API Automatricula",
+        title: "Larevel TDD CRUD APP",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "Implementation of CRUD operations in laravel following the TDD development methodology.",
+        tags: ["PHP", "Laravel", "PhpUnit", "JavaScript", "MySWL"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/laravel-ajax-crud",
           }
         ]
       },
             
       {
-        title: "API Automatricula",
+        title: "Student Management System",
         description:
-          "Developed using the Django Rest Framework. This API allows efficient communication between the backend and the frontend of the automatricula`s application",
-        tags: ["Python", "Django Rest Framework", "Postman", "APIs", "Pytest"],
+          "Web application developed using the MVC design pattern with PHP for the management of the MMESILÉ institute. It includes functions such as student enrolment management, student and teacher attendance, among others.",
+        tags: ["PHP", "JavaScript", "JQuery", "CodeIgniter", "Bootstrap", "MySQL"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/automatricula",
+            url: "https://github.com/Pascual-Eburi/codeigniter-student-management-system",
+          }
+        ]
+      },
+
+            {
+        title: "Stock Management System",
+        description:
+          "A minimal php procedural stock management system",
+        tags: ["PHP", "JavaScript", "JQuery", "Bootstrap", "MySQL"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/php-stock-management-app",
           }
         ]
       },
