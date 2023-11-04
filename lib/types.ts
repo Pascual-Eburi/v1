@@ -5,6 +5,11 @@ import { StaticImageData } from "next/image";
 import { IconBaseProps } from 'react-icons';
 
 
+export type RootLayoutPropsType = {
+  children: React.ReactNode,
+  params: {lng: string}
+}
+
 export type PagePropsType = {
   params: { lng: LanguageAbbreviation };
 };
