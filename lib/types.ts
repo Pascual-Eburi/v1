@@ -4,6 +4,11 @@ import { skills } from "./data/skills"
 import { StaticImageData } from "next/image";
 import { IconBaseProps } from 'react-icons';
 
+
+export type PagePropsType = {
+  params: { lng: LanguageAbbreviation };
+};
+
 // type for section heading props
 export type SectionHeadingProps = {
     children : React.ReactNode
@@ -32,8 +37,8 @@ export type SkillTabName = keyof typeof skills;
 
 /** Language option types */
 
-type LanguageName = "Spanish" | "English" | "French";
-type LanguageAbbreviation = "es" | "en" | "fr";
+export type LanguageName = "Spanish" | "English" | "French";
+export type LanguageAbbreviation = "es" | "en" | "fr";
 
 export type Language = {
     name: LanguageName,
