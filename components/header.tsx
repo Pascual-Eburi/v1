@@ -6,8 +6,11 @@ import Link from "next/link";
 
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/activeSectionContext";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function Header() {
+  const { t } = useLanguageContext("header");
+
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   return (
@@ -40,7 +43,7 @@ export default function Header() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                {link.name}
+                {t(link.name)}
                 {link.name === activeSection && (
                   <motion.span
                     className="bg-gray-700/80 rounded-full absolute inset-0 -z-10"
