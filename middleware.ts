@@ -22,11 +22,13 @@ export function middleware(req: { cookies: { has: (arg0: string) => any; get: (a
   ) {
     return NextResponse.redirect(new URL(`/${lng}${req.nextUrl.pathname}`, req.url))
   }
+  
 
   if (req.headers.has('referer')) {
     const refererUrl = new URL(req.headers.get('referer') as string | URL)
     const lngInReferer = languages.find((l) => refererUrl.pathname.startsWith(`/${l}`))
     const response = NextResponse.next()
+    console.log({refererUrl, lngInReferer, response})
     if (lngInReferer) response.cookies.set(cookieName, lngInReferer)
     return response
   }
