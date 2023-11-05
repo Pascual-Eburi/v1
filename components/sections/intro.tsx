@@ -11,8 +11,11 @@ import Link from "next/link";
 import useSectionInView from "@/lib/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/activeSectionContext";
 import DownloadCVButton from "../download-cv-btn";
+import { useTranslation } from "@/app/i18n/client";
+import React from "react";
 
-export default function Intro() {
+export default function Intro({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng, "intro");
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView({ section: "Home", threshold: 0.5 });
 
@@ -62,10 +65,10 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Pascual.</span> I'm a{" "}
-        <span className="font-bold"> Web developer and SysAdmin </span>. I enjoy
-        building <span className="italic">things for the web</span>. My focus is{" "}
-        <span className="underline"> PHP | Python - React | Vue </span>.
+        <span dangerouslySetInnerHTML={{ __html: t("greeting") }} />
+        <span dangerouslySetInnerHTML={{ __html: t("role") }} />
+        <span dangerouslySetInnerHTML={{ __html: t("passion") }} />
+        <span dangerouslySetInnerHTML={{ __html: t("focus") }} />
       </motion.h1>
 
       <motion.div
@@ -84,7 +87,7 @@ export default function Intro() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here{" "}
+          {t("contact")}{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
