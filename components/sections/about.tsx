@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import SectionHeading from "../section-heading";
 import useSectionInView from "@/lib/hooks/useSectionInView";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function About() {
+  const { t } = useLanguageContext("about");
   // check when component is in view to set active class to his link
   const { ref } = useSectionInView({ section: "About", threshold: 0.75 });
 
@@ -18,11 +20,41 @@ export default function About() {
       id="about"
     >
       <SectionHeading>
-        <span className="text-indigo-400 block text-center text-sm">know</span>
-        About me
+        <span className="text-indigo-400 block text-center text-sm">
+          {t("top-heading")}
+        </span>
+        {t("title")}
       </SectionHeading>
       <p className="mb-3">
-        I had my first contact with programming when I was studying a degree in{" "}
+        <span dangerouslySetInnerHTML={{ __html: t("first-contact") }} />
+        <span dangerouslySetInnerHTML={{ __html: t("after-studies") }} />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: t("favorite-part-of-programming"),
+          }}
+        />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: t("why-i-love-programming"),
+          }}
+        />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: t("core-stack"),
+          }}
+        />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: t("i-am-familiar-with"),
+          }}
+        />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: t("looking-for"),
+          }}
+        />
+
+        {/*         I had my first contact with programming when I was studying a degree in{" "}
         <span className="font-medium">
           computer science and business management{" "}
         </span>
@@ -39,7 +71,7 @@ export default function About() {
         I am also familiar with TypeScript and Java. I am always looking to
         learn new technologies. I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a web
-        developer (Front o Back).
+        developer (Front o Back). */}
       </p>
     </motion.section>
   );
