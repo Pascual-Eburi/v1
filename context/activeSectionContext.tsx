@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, createContext, useContext, useEffect } from "react";
+import React, { useState, createContext, useContext } from "react";
 import type {
   SectionName,
   ActiveSectionContextProviderProps,
@@ -15,19 +15,6 @@ export default function ActiveSectionContextProvider({
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
-
-  /* useEffect(() => {
-    const storedSectionActive = localStorage.getItem("activeSection") ?? "Home";
-    if (storedSectionActive !== activeSection) {
-      window.localStorage.setItem("activeSection", activeSection);
-      window.history.pushState(
-        null,
-        "",
-        `#${storedSectionActive.toLowerCase()}`
-      );
-    }
-    console.log("Active", activeSection);
-  }, [activeSection]); */
 
   return (
     <ActiveSectionContext.Provider
