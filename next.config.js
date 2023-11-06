@@ -6,11 +6,11 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/:path*',
-        destination: 'https://api.resend.com/:path*',
+        source: "/api/:path*",
+        destination: "https://api.resend.com/:path*",
       },
     ];
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
