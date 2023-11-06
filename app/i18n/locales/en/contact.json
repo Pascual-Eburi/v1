@@ -1,0 +1,15 @@
+{
+    "top-heading": "Say hello,",
+    "title": "Get in Touch",
+    "direct-contact": "Please contact me directly at",
+    "alternative-contact": "or through this form.",
+    "email-placeholder": "johndoe@example.com",
+    "message-placeholder": "Your message...",
+    "send-btn" : "Send Message",
+    "render-email-error-msg": "Error rendering email template",
+    "success-contact": "Your message has been sent!. Thank you for your message!!",
+    "Invalid email address": "Invalid email address",
+    "Invalid message": "Invalid message",
+    "Something went wrong. Please try again later":"Something went wrong. Please try again later."
+
+}
