@@ -1,0 +1,13 @@
+{
+    "top-heading": "Savoir",
+    "title" : "Sur moi",
+    "first-contact": "J'ai eu mon premier contact avec la programmation lors de mes études en <span class='font-medium'>informatique et gestion d'entreprise</span>. ",
+    "after-studies": "Après cela, j'ai décidé de poursuivre ma passion pour la programmation et le développement web <span class='font-medium'>en apprenant par moi-même</span>. ",
+    "favorite-part-of-programming": "<span class='italic'>Ma partie préférée de la programmation</span> est l'aspect résolution de problèmes. ",
+    "why-i-love-programming": "Je <span class='underline'>aime</span> le sentiment d'avoir enfin trouvé une solution à un problème. De plus, j'ai toujours aimé le fait de pouvoir prendre une idée dans ma tête et de la transformer en quelque chose de réel grâce au code. ",
+    "core-stack" : "Mon stack principale est <span class='font-medium'> PHP, Python, React, Vue, MySQL et PostgreSQL</span>. ",
+    "i-am-familiar-with" : "Je suis également familier avec TypeScript et Java. ",
+    "looking-for": "Je suis toujours ouvert à l'apprentissage de nouvelles technologies. Je suis actuellement à la recherche d'un <span class='font-medium'>poste à temps plein</span> en tant que développeur web."
+
+   
+}
