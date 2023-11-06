@@ -1,0 +1,15 @@
+{
+    "top-heading": "¿ Y ahora qué ?,",
+    "title": "¡Contácteme!",
+    "direct-contact": "Porfavor, Póngase en contacto conmigo directamente por correo: ",
+    "alternative-contact": "o a través de este formulario.",
+    "email-placeholder": "tucorreo@ejemplo.com",
+    "message-placeholder": "Tu mensaje...",
+    "send-btn" : "Enviar Mensaje",
+    "render-email-error-msg": "Error al generar la plantilla de correo electrónico.",
+    "success-contact": "¡¡Tu mensaje ha sido enviado!! Gracias por su mensaje.",
+    "Invalid email address": "Dirección de correo electrónico no válida",
+    "Invalid message": "Mensaje no válido",
+    "Something went wrong. Please try again later":"Algo ha ido mal. Vuelva a intentarlo más tarde."
+
+}
