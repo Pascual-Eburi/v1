@@ -81,7 +81,7 @@ export const OtherNotableProjects = [
         ]
       },
             {
-        title: "Price Tracker App ",
+        title: "Price Tracker App",
         description:
           "Next.js 13 & TypeScript eCommerce product Price Tracker",
         tags: ["Next.js", " TypeScript ", "Postman", "Web Scraping", "Data Scraping"],
