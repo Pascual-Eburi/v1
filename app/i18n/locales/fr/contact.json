@@ -1,0 +1,15 @@
+{
+    "top-heading": " Et maintenant quoi ?,",
+    "title": "Contactez moi!",
+    "direct-contact": "Veuillez me contacter directement par ce courriel: ",
+    "alternative-contact": "ou via ce formulaire. ",
+    "email-placeholder": "votreemail@exemple.com",
+    "message-placeholder": "Votre message...",
+    "send-btn" : "Envoyer message",
+    "render-email-error-msg": "Erreur lors de la génération du modèle d'e-mail.",
+    "success-contact": "Votre message a été envoyé ! Merci pour votre message.",
+    "Invalid email address": "Adresse électronique invalide",
+    "Invalid message": "Message non valide",
+    "Something went wrong. Please try again later":"Un problème s'est produit. Veuillez réessayer plus tard."
+
+}
