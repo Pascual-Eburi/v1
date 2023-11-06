@@ -1,0 +1,12 @@
+{
+    "top-heading": "Know",
+    "title" : "About me",
+    "first-contact": "I had my first contact with programming when I was studying a degree in <span class='font-medium'>computer science and business management</span>. ",
+    "after-studies": "After that, I decided to pursue my passion for programming and web development <span class='font-medium'>by learning on my own</span>. ",
+    "favorite-part-of-programming": "<span class='italic'>My favorite part of programming</span> is the problem-solving aspect. ",
+    "why-i-love-programming": "I <span class='underline'>love</span> the feeling of finally figuring out a solution to a problem. And also, I've always loved the fact that I can take an idea in my head and turn it into something real through code. ",
+    "core-stack" : "My core stack is <span class='font-medium'> PHP, Python, React, Vue, MySQL and PostgreSQL.</span> ",
+    "i-am-familiar-with" : "I am also familiar with TypeScript and Java. ",
+    "looking-for": "I am always looking to learn new technologies. I am currently looking for a <span class='font-medium'>full-time position</span> as a web developer (Front o Back). "
+}
+
