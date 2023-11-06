@@ -1,0 +1,12 @@
+{
+    "top-heading": "Sepa",
+    "title" : "Sobre mí",
+    "first-contact": "Tuve mi primer contacto con la programación cuando estudiaba la carrera de <span class='font-medium'>informática de gestión </span>. ",
+    "after-studies": "Después de eso, decidí seguir mi pasión por la programación y el desarrollo web <span class='font-medium'>aprendiendo por mi cuenta</span> .",
+    "favorite-part-of-programming": "<span class='italic'>Mi parte favorita de la programación</span> es la resolución de problemas. ",
+    "why-i-love-programming": "<span class='underline'>Me encanta</span> la sensación de encontrar por fin una solución a un problema. Y también, siempre me ha gustado el hecho de poder tomar una idea de mi cabeza y convertirla en algo real a través de código. ",
+    "core-stack" : "Mi stack principal es <span class='font-medium'> PHP, Python, React, Vue, MySQL y PostgreSQL. </span>",
+    "i-am-familiar-with" : "También estoy familiarizado con TypeScript y Java. ",
+    "looking-for": "Siempre estoy abierto a aprender nuevas tecnologías. Actualmente estoy buscando un <span class='font-medium'>puesto a tiempo completo</span> como desarrollador web (Front o Back). "
+   
+}
