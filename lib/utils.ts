@@ -40,7 +40,7 @@ export function validateString( value: unknown, maxLength: number ): value is st
         return error;
     }
 
-    return "Something went wrong. Please try again later."
+    return "Something went wrong. Please try again later"
   }
 
 
