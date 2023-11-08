@@ -1,0 +1,6 @@
+{
+    "featured-project": "Projet en vedette", 
+    "Automatricula": "J'ai développé cette application web dans le cadre de mon GFT. Cette application permettra aux étudiants de Guinée équatoriale de s'inscrire en ligne au selectividad et d'accéder à leurs notes. Elle offre également aux écoles la possibilité de pré-inscrire leurs élèves en ligne.",
+    "API Automatricula": "J'ai développé cette API pour permettre une communication efficace entre le backend et le frontend de l'application automatricula.",
+    "PHARMA": "Système de gestion web développé en PHP en utilisant le modèle de conception MVC, pour la gestion des stocks, des ressources humaines, du CRM, des points de vente et de la facturation d'une pharmacie."
+}
