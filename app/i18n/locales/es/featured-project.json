@@ -1,0 +1,6 @@
+{
+    "featured-project": "Proyecto Destacado", 
+    "Automatricula": "He desarrollado esta aplicación web como parte de mi TFG. Esta aplicación permitirá a los estudiantes de Guinea Ecuatorial inscribirse en la selectividad online y acceder a sus notas. También ofrece a los colegios la posibilidad de preinscribir a sus alumnos online.",
+    "API Automatricula": "He desarrollado esta API para permitir una comunicación eficiente entre el backend y el frontend de la aplicación automatricula.",
+    "PHARMA": "Sistema de gestión web desarrollado con PHP utilizando el patrón de diseño MVC, para la gestión de Inventario, RRHH, CRM, TPV, Facturación de una farmacia."
+}
