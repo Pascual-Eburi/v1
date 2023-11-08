@@ -1,0 +1,6 @@
+{
+    "featured-project": "Featured Project", 
+    "Automatricula": "I developed this web application as part of my TFG. This application will allow students in Equatorial Guinea to register for the selectividad online and access their grades. It also provides schools with the possibility of pre-registering their students online.",
+    "API Automatricula": "I developed this API to allow efficient communication between the backend and the frontend of the automatricula`s applicatio",
+    "PHARMA": "Web management system developed with PHP using the MVC design pattern, for the management of Inventory, HR, CRM, POS, Billing of a pharmacy."
+}
