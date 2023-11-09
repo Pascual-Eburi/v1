@@ -1,0 +1,8 @@
+{
+    "greeting": "<span class='font-bold'>Hello, I'm Pascual. </span>",
+    "role": "I'm a <span class='font-bold'> Web developer and SysAdmin </span>.",
+    "passion": " I enjoy building <span class='italic'>things for the web</span>.",
+    "focus": " My focus is <span class='underline'> PHP | Python - React | Vue </span>.",
+    "contact": "Contact me here"
+
+}
