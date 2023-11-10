@@ -1,0 +1,10 @@
+{
+    "Personal Porfolio": "Première itération de mon site web personnel construit avec React, Next.js App, Framer Motion, TypeScript, Tailwind CSS",
+    "Car Tracking App" : "Une implémentation de suivi de voiture utilisant React, Java, Sockets, SpringBoot",
+    "Price Tracker App": "Suivi des prix des produits e-commerce développé avec Next.js 13 et TypeScript",
+    "Laravel + Livewire Ecommerce" : "Mise en œuvre d'un commerce électronique à partir de zéro en suivant les principes SOLID et le modèle de conception MVC.",
+    "Larevel TDD CRUD APP": "Implémentation d'opérations CRUD en laravel suivant la méthodologie de développement TDD.",
+    "Student Management System": "Application web développée en utilisant le modèle de conception MVC avec PHP pour la gestion de l'institut MMESILÉ. Elle comprend des fonctions telles que la gestion des inscriptions des étudiants, l'assiduité des étudiants et des enseignants, entre autres.",
+    "Stock Management System":"Un système simple de gestion des stocks développé avec une procédure php"
+
+}
