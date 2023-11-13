@@ -2,14 +2,16 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { HiDownload } from "react-icons/hi";
 import Image from "next/image";
-import { CVLanguages } from "@/lib/data/languajes";
+import { Languages } from "@/lib/data/languajes";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function DownloadCVButton() {
+  const { t } = useLanguageContext("download-cv");
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-95 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10">
-          Download CV
+          {t("download-cv")}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition -mr-1 h-5 w-5 text-gray-400" />
         </Menu.Button>
       </div>
@@ -25,7 +27,7 @@ export default function DownloadCVButton() {
       >
         <Menu.Items className="absolute right-0 !z-20 mt-2 w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-700">
           <div className="py-1">
-            {CVLanguages.map((lang, index) => (
+            {Languages.map((lang, index) => (
               <Fragment key={index}>
                 <Menu.Item>
                   {({ active }) => (
@@ -44,7 +46,7 @@ export default function DownloadCVButton() {
                         className="w-[1rem] h-[1rem] object-cover"
                       />
 
-                      <span>{lang.name} version </span>
+                      <span>{t(lang.abbr)}</span>
                     </a>
                   )}
                 </Menu.Item>
