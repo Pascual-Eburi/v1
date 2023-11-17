@@ -9,9 +9,6 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/loader";
 import type { PagePropsType } from "@/lib/types";
 
-import { useTranslation } from "react-i18next";
-import RootLayout from "./layout";
-
 export default function Home({ params: { lng } }: PagePropsType) {
   const [mounted, setMounted] = useState(false);
 
@@ -34,16 +31,15 @@ export default function Home({ params: { lng } }: PagePropsType) {
   if (!mounted) {
     return <Loader />;
   }
+
   return (
-    <RootLayout>
-      <main className="flex flex-col items-center px-4">
-        <Intro />
-        <SectionDivider />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-    </RootLayout>
+    <main className="flex flex-col items-center px-4">
+      <Intro />
+      <SectionDivider />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+    </main>
   );
 }
