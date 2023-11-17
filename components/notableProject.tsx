@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
 import { motion } from "framer-motion";
 import type { OtherNotableProjectsProps } from "@/lib/types";
 import { IconFolder } from "./icons";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function NotableProject({
   title,
@@ -9,6 +10,8 @@ export default function NotableProject({
   tags,
   links,
 }: OtherNotableProjectsProps) {
+  const { t } = useLanguageContext("other-notable-project");
+
   return (
     <motion.li
       initial={{ opacity: 0, y: -10 }}
@@ -45,7 +48,7 @@ export default function NotableProject({
             </a>
           </h3>
           <div className="dark:text-[#a8b2d1] text-gray-500 text-[17px] ">
-            <p>{description}</p>
+            <p>{t(title)}</p>
           </div>
         </header>
         <footer>
