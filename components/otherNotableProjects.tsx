@@ -4,8 +4,10 @@ import { OtherNotableProjects as otherNotableProjects } from "@/lib/data/project
 import SectionHeading from "./section-heading";
 import NotableProject from "./notableProject";
 import ShowProjectsButton from "./show-projects-btn";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function OtherNotableProjects() {
+  const { t } = useLanguageContext("other-notable-projects");
   //const [showMore, setShowMore] = useState(true);
   const listRef = useRef<HTMLUListElement | null>(null);
   const showMoreBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -28,7 +30,7 @@ export default function OtherNotableProjects() {
     setVisibleProjects((prevProjects) => [...prevProjects, ...nextProjects]);
 
     lastItem = document.querySelectorAll("#otherProjects > li");
-    console.log(lastItem);
+
     if (showMoreBtnRef.current) {
       showMoreBtnRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -50,8 +52,10 @@ export default function OtherNotableProjects() {
   return (
     <div className="mt-[6rem] max-w-[53rem] mx-auto">
       <SectionHeading>
-        <span className="text-[#CC7AFF] block text-center text-sm">other</span>
-        Notable Projects
+        <span className="text-[#CC7AFF] block text-center text-sm">
+          {t("top-heading")}
+        </span>
+        {t("title")}
       </SectionHeading>
       <ul
         ref={listRef}
