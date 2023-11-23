@@ -1,4 +1,5 @@
 "use client";
+import { useLanguageContext } from "@/context/languageContext";
 import type { FeaturedProjectProps } from "@/lib/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
@@ -11,6 +12,8 @@ export default function Project({
   imageUrl,
   links,
 }: FeaturedProjectProps) {
+  const { t } = useLanguageContext("featured-project");
+
   const ref = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,7 +35,7 @@ export default function Project({
       <div className="flex flex-wrap flex-col relative md:row-[1/-1] md:group-odd:col-[1/7] text-left md:group-odd:text-left md:group-even:col-[7/-1] md:group-even:text-right px-8 pb-9 md:px-0 md:pb-0">
         <div className="md:block my-4 md:my-0 flex flex-row-reverse items-center justify-between">
           <div className="project-label font-mono text-teal-400">
-            Featured Project
+            {t("featured-project")}
           </div>
           <h4 className="text-[1.4rem] md:mt-[10px] ml-[0] md:mb-[30px] dark:text-white/80 text-gray-600 font-bold">
             {title}
@@ -40,7 +43,7 @@ export default function Project({
         </div>
         <div className="text-[15px] text-[#eee] leading-[1.5] ">
           <p className="relative md:p-[25px] mb-4 md:mb-0 z-[2] text-[16px] transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)] rounded-[4px] md:bg-gray-50 md:dark:bg-[#112240] dark:text-[#a8b2d1] text-gray-500 md:shadow-xl">
-            {description}
+            {t(title)}
           </p>
           <ul className="flex mt-[10px] flex-wrap">
             {tags.map((tag, index) => (
