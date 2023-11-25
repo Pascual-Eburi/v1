@@ -11,7 +11,10 @@ import { motion } from "framer-motion";
 import useSectionInView from "@/lib/hooks/useSectionInView";
 import { convertToLower } from "@/lib/utils";
 
+import { useLanguageContext } from "@/context/languageContext";
+
 export default function Skills() {
+  const { t } = useLanguageContext("skills");
   // check when component is in view to set active class to his link
   const { ref } = useSectionInView({ section: "Skills", threshold: 0.75 });
 
@@ -38,10 +41,11 @@ export default function Skills() {
       animate={{ opacity: 1, y: 0 }}
     >
       <SectionHeading>
-        <span className="text-teal-400 block text-center text-sm">
-          Tools &amp;
-        </span>
-        technologies
+        <span
+          dangerouslySetInnerHTML={{ __html: t("top-heading") }}
+          className="text-teal-400 block text-center text-sm"
+        ></span>
+        {t("title")}
       </SectionHeading>
       <div className="p-10 md:flex md:gap-3">
         <ul className="text-center md:text-right flex justify-center md:flex-col gap-0 md:gap-0 md:basis-1/4 text-gray-400 relative font-medium">
@@ -60,7 +64,7 @@ export default function Skills() {
                   }
                 )}
               >
-                <span className="capitalize">{name} </span>
+                <span className="capitalize">{t(name)} </span>
 
                 <span
                   className={clsx(
