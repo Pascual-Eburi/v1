@@ -11,11 +11,11 @@ import Link from "next/link";
 import useSectionInView from "@/lib/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/activeSectionContext";
 import DownloadCVButton from "../download-cv-btn";
-import { useTranslation } from "@/app/i18n/client";
 import React from "react";
+import { useLanguageContext } from "@/context/languageContext";
 
-export default function Intro({ lng }: { lng: string }) {
-  const { t } = useTranslation(lng, "intro");
+export default function Intro() {
+  const { t } = useLanguageContext("intro");
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView({ section: "Home", threshold: 0.5 });
 
