@@ -9,8 +9,10 @@ import { ContactFormEmail } from "@/email/contact-form-email";
 import toast from "react-hot-toast";
 import { FaPaperPlane } from "react-icons/fa";
 import { validateContactFormData } from "@/lib/utils";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function Contact() {
+  const { t } = useLanguageContext("contact");
   const { ref } = useSectionInView({ section: "Contact", threshold: 0.5 });
   const [pending, setPending] = useState(false);
   const initialFormState = { senderEmail: "", message: "" };
@@ -31,7 +33,7 @@ export default function Contact() {
     const { validationError } = validateContactFormData(formData);
 
     if (validationError !== false) {
-      toast.error(validationError as string);
+      toast.error(t(validationError as string));
       setPending(false);
       return;
     }
@@ -45,7 +47,7 @@ export default function Contact() {
 
       emailTemplateToHTML = ReactDOMServer.renderToString(emailTemplate);
     } catch (error) {
-      toast.error("Error rendering email template");
+      toast.error(t("render-email-error-msg"));
       return;
     }
 
@@ -57,7 +59,7 @@ export default function Contact() {
     }
 
     setPending(false);
-    toast.success("Your message has been sent!. Thank you for your message!!", {
+    toast.success(t("success-contact"), {
       duration: 5000,
     });
     setData(initialFormState);
@@ -76,16 +78,16 @@ export default function Contact() {
     >
       <SectionHeading>
         <span className="text-indigo-400 block text-center text-sm">
-          Say Hello,
+          {t("top-heading")}
         </span>
-        Get in Touch{" "}
+        {t("title")}{" "}
       </SectionHeading>
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
+        {t("direct-contact")}{" "}
         <a className="underline" href="mailto:pascualeburi@gmail.com">
           pascualeburi@gmail.com
         </a>{" "}
-        or through this form.
+        {t("alternative-contact")}
       </p>
       <form
         id="contactForm"
@@ -99,7 +101,7 @@ export default function Contact() {
           name="senderEmail"
           required
           maxLength={100}
-          placeholder="jonhdoe@example.com..."
+          placeholder={t("email-placeholder")}
           onChange={(e) => {
             handleChange(e);
           }}
@@ -108,7 +110,7 @@ export default function Contact() {
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-gray-800 dark:text-gray-400 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
-          placeholder="Your message"
+          placeholder={t("message-placeholder")}
           required
           maxLength={5000}
           onChange={(e) => {
@@ -126,7 +128,7 @@ export default function Contact() {
             <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
           ) : (
             <>
-              Send Message{" "}
+              {t("send-btn")}{" "}
               <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
             </>
           )}
