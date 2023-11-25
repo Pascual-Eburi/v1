@@ -6,8 +6,10 @@ import SectionHeading from "../section-heading";
 import Project from "../project";
 import useSectionInView from "@/lib/hooks/useSectionInView";
 import OtherNotableProjects from "../otherNotableProjects";
+import { useLanguageContext } from "@/context/languageContext";
 
 export default function Projects() {
+  const { t } = useLanguageContext("featured-projects");
   // check when component is in view to set active class to his link
   const { ref } = useSectionInView({ section: "Projects", threshold: 0.2 });
 
@@ -16,9 +18,9 @@ export default function Projects() {
       <SectionHeading>
         <span className="text-[#CC7AFF] block text-center text-sm">
           {" "}
-          Some of{" "}
+          {t("top-heading")}
         </span>
-        My Projects
+        {t("title")}
       </SectionHeading>
 
       <ul className="max-w-[1000px] mx-auto my-[50px] ">
