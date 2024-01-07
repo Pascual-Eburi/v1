@@ -4,14 +4,9 @@ import { skills } from "./data/skills"
 import { StaticImageData } from "next/image";
 import { IconBaseProps } from 'react-icons';
 
-type PageMetaDataTypes = {
-    title : string,
-    description: string
-}
 export type RootLayoutPropsType = {
   children: React.ReactNode,
   params: {lng: string},
-  metadata: PageMetaDataTypes
 }
 
 export type PagePropsType = {
