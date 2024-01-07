@@ -7,9 +7,8 @@ import Skills from "@/components/sections/skills";
 import Contact from "@/components/sections/contact";
 import { useEffect, useState } from "react";
 import Loader from "@/components/loader";
-import type { PagePropsType } from "@/lib/types";
 
-export default function Home({ params: { lng } }: PagePropsType) {
+export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
