@@ -9,10 +9,6 @@ export type RootLayoutPropsType = {
   params: {lng: string},
 }
 
-export type PagePropsType = {
-  params: { lng: LanguageAbbreviation };
-  /* metadata: PageMetaDataTypes */
-};
 
 // type for section heading props
 export type SectionHeadingProps = {
