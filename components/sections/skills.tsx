@@ -57,7 +57,7 @@ export default function Skills() {
                 }}
                 key={name}
                 className={clsx(
-                  "cursor-pointer p-3 relative font-bold text-[.7rem] m-0 dark:text-white/30",
+                  "cursor-pointer p-3 relative font-bold text-[.85rem] m-0 dark:text-white/30",
                   {
                     "text-gray-900 dark:text-white/90 md:bg-gradient-to-r md:from-[transparent]  md:to-gray-100 md:dark:from-[transparent] md:dark:to-[#163769] ":
                       name == activeTab,
