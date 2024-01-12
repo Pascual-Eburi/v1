@@ -1,4 +1,5 @@
 import { dir } from "i18next";
+import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/sections/footer";
 import "../globals.css";
@@ -11,6 +12,8 @@ import LanguageSwith from "@/components/language-swith";
 import { Languages } from "@/lib/data/languajes";
 import { RootLayoutPropsType } from "@/lib/types";
 import LanguageContextProvider from "@/context/languageContext";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -41,6 +44,7 @@ export default function RootLayout({
             <ActiveSectionContextProvider>
               <Header />
               {children}
+              <Analytics />
               <Footer />
               <Toaster position="top-right" />
               <ThemeSwith />
