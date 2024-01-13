@@ -18,6 +18,7 @@
     "@types/react": "18.2.27",
     "@types/react-dom": "18.2.12",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.3",
     "accept-language": "^3.0.18",
     "autoprefixer": "10.4.16",
     "clsx": "^2.0.0",
