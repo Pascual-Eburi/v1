@@ -1,5 +1,6 @@
 import { dir } from "i18next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/sections/footer";
 import "../globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({
               <Header />
               {children}
               <Analytics />
+              <SpeedInsights />
               <Footer />
               <Toaster position="top-right" />
               <ThemeSwith />
