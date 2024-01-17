@@ -54,6 +54,19 @@ export const FeaturedProjects = [
 
 
 export const OtherNotableProjects = [
+        {
+        title: "RandomDishHub",
+        description:
+          "Web application for a restaurant that organises free food donation days. The application uses a microservices architecture to decouple the logic, facilitating scalability and maintenance.",
+        tags: ["PHP", "Laravel", "Docker","MySQL","JavaScript", "RabbitMQ", "WebSockets", "PHPUnit"],
+        links: [
+          {
+            name: "Github",
+            icon: GithubIcon,
+            url: "https://github.com/Pascual-Eburi/",
+          }
+        ]
+      },
       {
         title: "Personal Porfolio",
         description:
@@ -121,15 +134,15 @@ export const OtherNotableProjects = [
       },
             
       {
-        title: "Student Management System",
+        title: "MMSILÉ",
         description:
           "Web application developed using the MVC design pattern with PHP for the management of the MMESILÉ institute. It includes functions such as student enrolment management, student and teacher attendance, among others.",
-        tags: ["PHP", "JavaScript", "JQuery", "CodeIgniter", "Bootstrap", "MySQL"],
+        tags: ["PHP", 'Laravel', 'Vue', "JavaScript", "JQuery", "CodeIgniter", "Bootstrap", "MySQL"],
         links: [
           {
             name: "Github",
             icon: GithubIcon,
-            url: "https://github.com/Pascual-Eburi/codeigniter-student-management-system",
+            url: "https://github.com/Pascual-Eburi/mmsile",
           }
         ]
       },
