@@ -4,7 +4,7 @@
     "Price Tracker App": "Next.js 13 & TypeScript eCommerce product Price Tracker",
     "Laravel + Livewire Ecommerce" : "Implementation of an online shop from scratch following SOLID principles and the MVC design pattern.",
     "Larevel TDD CRUD APP": "Implementation of CRUD operations in laravel following the TDD development methodology.",
-    "Student Management System": "Web application developed using the MVC design pattern with PHP for the management of the MMESILÉ institute. It includes functions such as student enrolment management, student and teacher attendance, among others.",
+    "MMSILÉ": "Web application developed using the MVC design pattern with PHP for the management of the MMESILÉ institute. It includes functions such as student enrolment management, student and teacher attendance, among others.",
     "Stock Management System":"A minimal php procedural stock management system",
     "RandomDishHub":"Web application for a restaurant that organises free food donation days. The application uses a microservices architecture to decouple the logic, facilitating scalability and maintenance."
 
