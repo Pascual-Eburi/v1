@@ -6,5 +6,6 @@
     "Larevel TDD CRUD APP": "Implementación de operaciones CRUD en laravel siguiendo la metodología de desarrollo TDD.",
     "Student Management System": "Aplicación web desarrollada utilizando el patrón de diseño MVC con PHP para la gestión del instituto MMESILÉ. Incluye funciones como la gestión de la matriculación de alumnos, la asistencia de alumnos y profesores, entre otras.",
     "Stock Management System":"Un sencillo sistema de gestión de existencias desarrollado con php procedural"
-
+,
+    "RandomDishHub":"Aplicación web para un restaurante que organiza jornadas de donación de comida gratis. La aplicación utiliza una arquitectura de microservicios para desacoplar la lógica, facilitando la escalabilidad y mantenimiento"
 }
